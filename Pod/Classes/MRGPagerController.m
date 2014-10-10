@@ -53,6 +53,12 @@
     return self;
 }
 
+- (void)dealloc {
+    _pagerStrip.delegate = nil;
+    _pagerScrollView.delegate = nil;
+    _delegate = nil;
+}
+
 #pragma mark - lifecyle
 
 - (void)viewDidLoad {

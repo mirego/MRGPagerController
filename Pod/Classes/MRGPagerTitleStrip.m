@@ -74,6 +74,11 @@
     return self;
 }
 
+- (void)dealloc {
+    _scrollView.delegate = nil;
+    _delegate = nil;
+}
+
 - (void)setNeedsUpdateView {
     _needsUpdateView = YES;
     [self setNeedsLayout];
