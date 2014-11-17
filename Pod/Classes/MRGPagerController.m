@@ -105,7 +105,7 @@
     }
     
     self.pagerScrollView.contentSize = CGSizeMake(frame.origin.x, CGRectGetHeight(self.pagerScrollView.bounds));
-    [self hideViewControllersOutsideOfBounds];
+    [self scrollToViewController:self.currentViewController animated:NO];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -188,9 +188,9 @@
         } else {
             _currentViewController = nil;
         }
+        
+        [self hideViewControllersOutsideOfBounds];
     }
-    
-    [self hideViewControllersOutsideOfBounds];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
