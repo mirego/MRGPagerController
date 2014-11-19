@@ -105,7 +105,9 @@
     }
     
     self.pagerScrollView.contentSize = CGSizeMake(frame.origin.x, CGRectGetHeight(self.pagerScrollView.bounds));
+    
     [self scrollToViewController:self.currentViewController animated:NO];
+    [self hideViewControllersOutsideOfBounds];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
