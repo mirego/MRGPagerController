@@ -19,7 +19,7 @@ pod 'MRGPagerController', :git => 'https://github.com/mirego/MRGPagerController.
 
 ## License
 
-MRGPagerController is © 2014 [Mirego](http://www.mirego.com) and may be freely
+MRGPagerController is © 2014-2015 [Mirego](http://www.mirego.com) and may be freely
 distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
 See the [`LICENSE.md`](https://github.com/mirego/MRGPagerController.iOS/blob/master/LICENSE.md) file.
 
