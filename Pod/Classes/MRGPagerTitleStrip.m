@@ -196,8 +196,22 @@
     [self updateButtonIndex:index];
     
     if ([self.buttons count] > 0 && (self.scrollView.contentSize.width > CGRectGetWidth(self.scrollView.bounds))) {
-        CGFloat offset = MIN(MAX(((index / self.buttons.count) * self.scrollView.contentSize.width - 30.0f), 0), self.scrollView.contentSize.width - CGRectGetWidth(self.scrollView.bounds));
+        CGFloat offset = 0;
+        NSInteger prevButtonIndex = MAX(floorf(index), 0);
+        NSInteger nextButtonIndex = MIN(ceilf(index), [self.buttons count]);
+        
+        for (NSInteger ii = 0, count = MIN(prevButtonIndex, [self.buttons count]); ii < count; ++ii) {
+            offset += CGRectGetWidth([self.buttons[ii] bounds]);
+            offset += self.separatorSize.width;
+        }
+        
+        if ((prevButtonIndex >= 0) && (prevButtonIndex != nextButtonIndex) && (nextButtonIndex < [self.buttons count])) {
+            offset += CGRectGetWidth([self.buttons[(nextButtonIndex-1)] bounds]) * (index - prevButtonIndex);
+        }
+        
+        offset = MIN(MAX(offset, 0), self.scrollView.contentSize.width - CGRectGetWidth(self.scrollView.bounds));
         [self.scrollView setContentOffset:CGPointMake(offset, self.scrollView.contentOffset.y) animated:NO];
+        
     } else {
         [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:NO];
     }
