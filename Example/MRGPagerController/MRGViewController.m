@@ -64,6 +64,7 @@
     ];
 
     controller.viewControllers = tabs;
+    controller.initialViewController = tabs[7];
 }
 
 - (void)viewDidLayoutSubviews {

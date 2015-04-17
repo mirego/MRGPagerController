@@ -33,21 +33,22 @@
 
 @interface MRGPagerController : UIViewController
 
-@property (nonatomic, weak) id <MRGPagerControllerDelegate> delegate;
+@property (nonatomic, weak) id<MRGPagerControllerDelegate> delegate;
+@property (nonatomic, readonly) UIView<MRGPagerStrip> *pagerStrip;
+@property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, weak) UIViewController *currentViewController;
+@property (nonatomic, weak) UIViewController *initialViewController;
 
 - (instancetype)init;
+
 - (instancetype)initWithPagerStripClass:(Class)pagerStripClass;
 
-@property (nonatomic, readonly) UIView<MRGPagerStrip> *pagerStrip;
-
-@property (nonatomic, copy) NSArray *viewControllers;
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 
-@property (nonatomic, weak) UIViewController *currentViewController;
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated;
 
 @end
 
-@protocol MRGPagerControllerDelegate <NSObject>
+@protocol MRGPagerControllerDelegate<NSObject>
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
 @end
