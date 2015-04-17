@@ -28,7 +28,7 @@
 
 #import "MRGPagerController.h"
 
-@interface MRGPagerController () <UIScrollViewDelegate, MRGPagerStripDelegate>
+@interface MRGPagerController ()<UIScrollViewDelegate, MRGPagerStripDelegate>
 @property (nonatomic) Class pagerStripClass;
 @property (nonatomic) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic) UIScrollView *pagerScrollView;
@@ -63,7 +63,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.pagerStrip = (UIView<MRGPagerStrip> *)[[_pagerStripClass alloc] init];
     if (self.pagerStrip) {
         [self.view addSubview:self.pagerStrip];
@@ -71,7 +71,7 @@
         self.pagerStrip.viewControllers = self.viewControllers;
         [self.view addSubview:self.pagerStrip];
     }
-    
+
     self.pagerScrollView = [[UIScrollView alloc] init];
     self.pagerScrollView.scrollsToTop = NO;
     self.pagerScrollView.delegate = self;
@@ -79,7 +79,7 @@
     self.pagerScrollView.showsHorizontalScrollIndicator = NO;
     self.pagerScrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.pagerScrollView];
-    
+
     [self updateViewControllersWithOldViewControllers:nil newViewControllers:self.viewControllers animated:NO];
     [self scrollViewDidScroll:self.pagerScrollView];
 }
@@ -89,24 +89,30 @@
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     CGSize size = self.view.bounds.size;
-    
+
     CGFloat pagerStripBottom = 0;
     if (self.pagerStrip.superview == self.view) {
         self.pagerStrip.frame = CGRectMake(0, 0, size.width, [self.pagerStrip sizeThatFits:self.view.bounds.size].height);
         pagerStripBottom = CGRectGetMaxY(self.pagerStrip.bounds);
     }
-    
+
     self.pagerScrollView.frame = CGRectMake(0, pagerStripBottom, size.width, (size.height - pagerStripBottom));
-    
+
     CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.pagerScrollView.bounds), CGRectGetHeight(self.pagerScrollView.bounds));
     for (UIViewController *viewController in self.viewControllers) {
         viewController.view.frame = frame;
         frame.origin.x += size.width;
     }
-    
+
     self.pagerScrollView.contentSize = CGSizeMake(frame.origin.x, CGRectGetHeight(self.pagerScrollView.bounds));
-    
+
+    if (self.initialViewController) {
+        _currentViewController = self.initialViewController;
+        self.initialViewController = nil;
+    }
+
     [self scrollToViewController:self.currentViewController animated:NO];
+
     [self hideViewControllersOutsideOfBounds];
 }
 
@@ -121,7 +127,7 @@
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
     [self scrollToViewController:self.currentViewController animated:NO];
-    
+
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
             [viewController willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:0];
@@ -133,7 +139,7 @@
     if ([self isViewLoaded] == NO) {
         return;
     }
-    
+
     NSMutableOrderedSet *removeViewControllers = [[NSMutableOrderedSet alloc] initWithArray:oldViewControllers];
     [removeViewControllers minusSet:[[NSSet alloc] initWithArray:newViewControllers]];
     for (UIViewController *viewController in removeViewControllers) {
@@ -141,17 +147,17 @@
         [viewController.view removeFromSuperview];
         [viewController removeFromParentViewController];
     }
-    
+
     NSMutableOrderedSet *addViewControllers = [[NSMutableOrderedSet alloc] initWithArray:newViewControllers];
     [addViewControllers minusSet:[[NSSet alloc] initWithArray:oldViewControllers]];
     for (UIViewController *viewController in addViewControllers) {
         [self addChildViewController:viewController];
-        
+
         UIView *viewControllerView = viewController.view;
         viewControllerView.autoresizingMask = UIViewAutoresizingNone;
         [viewController didMoveToParentViewController:self];
     }
-    
+
     [self.view setNeedsLayout];
 }
 
@@ -162,7 +168,6 @@
             if ([viewControllerView superview] != nil) {
                 [viewControllerView removeFromSuperview];
             }
-            
         } else {
             if ([viewControllerView superview] == nil) {
                 [self.pagerScrollView addSubview:viewControllerView];
@@ -175,22 +180,22 @@
     NSUInteger index = [self.viewControllers indexOfObject:viewController];
     CGPoint contentOffset = CGPointMake(index != NSNotFound ? index * CGRectGetWidth(self.pagerScrollView.bounds) : 0, 0);
     [self.pagerScrollView setContentOffset:contentOffset animated:animated];
+    [self.pagerStrip setCurrentIndex:index animated:animated];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat index = (CGRectGetWidth(scrollView.bounds) > 0) ? (scrollView.contentOffset.x / CGRectGetWidth(scrollView.bounds)) : 0;
     [self.pagerStrip setCurrentIndex:index animated:NO];
-    
+
     if (!self.isRotatingInterfaceOrientation) {
         if (self.viewControllers.count > 0) {
             NSUInteger currentIndex = roundf(index);
             currentIndex = ((currentIndex > 0) ? (currentIndex < (self.viewControllers.count - 1)) ? currentIndex : (self.viewControllers.count - 1) : 0);
             _currentViewController = [self.viewControllers objectAtIndex:currentIndex];
-            
         } else {
             _currentViewController = nil;
         }
-        
+
         [self hideViewControllersOutsideOfBounds];
     }
 }
@@ -222,7 +227,7 @@
     if (_viewControllers != viewControllers) {
         NSArray *oldViewControllers = self.viewControllers;
         _viewControllers = [viewControllers copy];
-        
+
         [self.pagerStrip setViewControllers:self.viewControllers animated:animated];
         [self updateViewControllersWithOldViewControllers:oldViewControllers newViewControllers:self.viewControllers animated:animated];
         [self scrollViewDidScroll:self.pagerScrollView];
@@ -236,9 +241,9 @@
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated {
     if (_currentViewController != currentViewController) {
         _currentViewController = currentViewController;
-        
+
         [self scrollToViewController:self.currentViewController animated:animated];
-        
+
         if (!animated) {
             [self didEndScrolling];
         }
