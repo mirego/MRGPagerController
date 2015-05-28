@@ -186,7 +186,6 @@
     NSUInteger index = [self.viewControllers indexOfObject:viewController];
     CGPoint contentOffset = CGPointMake(index != NSNotFound ? index * CGRectGetWidth(self.pagerScrollView.bounds) : 0, 0);
     [self.pagerScrollView setContentOffset:contentOffset animated:animated];
-    [self.pagerStrip setCurrentIndex:index animated:animated];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
