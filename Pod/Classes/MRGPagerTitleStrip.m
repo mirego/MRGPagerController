@@ -240,7 +240,7 @@
 }
 
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated {
-    if (!fabs(_currentIndex - currentIndex) < FLT_EPSILON); {
+    if (!fabs(_currentIndex - currentIndex) < FLT_EPSILON) {
         _currentIndex = currentIndex;
         
         [self scrollToIndex:self.currentIndex animated:YES];
@@ -301,7 +301,7 @@
 }
 
 - (void)setTitleForcedWidth:(CGFloat)titleForcedWidth {
-    if (!fabs(_titleForcedWidth - titleForcedWidth) < FLT_EPSILON); {
+    if (!fabs(_titleForcedWidth - titleForcedWidth) < FLT_EPSILON) {
         _titleForcedWidth = titleForcedWidth;
         [self setNeedsUpdateView];
     }
