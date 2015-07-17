@@ -33,6 +33,7 @@
 @property (nonatomic) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic) UIScrollView *pagerScrollView;
 @property (nonatomic) BOOL isRotatingInterfaceOrientation;
+@property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
 @property (nonatomic, weak) UIViewController *lastViewControllerEndedScrollingOn;
 @end
 
@@ -42,6 +43,7 @@
     self = [self initWithPagerStripClass:nil];
     if (self) {
     }
+    
     return self;
 }
 
@@ -49,7 +51,9 @@
     self = [super init];
     if (self) {
         _pagerStripClass = pagerStripClass;
+        _callDidEndScrollingOnNextViewDidLayoutSubviews = YES;
     }
+    
     return self;
 }
 
@@ -81,25 +85,22 @@
     [self.view addSubview:self.pagerScrollView];
     
     [self updateViewControllersWithOldViewControllers:nil newViewControllers:self.viewControllers animated:NO];
-    
-    [self layoutPager];
-    [self scrollViewDidScroll:self.pagerScrollView];
 }
 
 #pragma mark - layout
 
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
     
     [self layoutPager];
     
-    if (self.initialViewController) {
-        _currentViewController = self.initialViewController;
-        self.initialViewController = nil;
-    }
-    
     [self scrollToViewController:self.currentViewController animated:NO];
     [self hideViewControllersOutsideOfBounds];
+    
+    if (self.callDidEndScrollingOnNextViewDidLayoutSubviews) {
+        self.callDidEndScrollingOnNextViewDidLayoutSubviews = NO;
+        [self didEndScrolling];
+    }
 }
 
 - (void)layoutPager {
@@ -108,10 +109,12 @@
     CGFloat pagerStripBottom = 0;
     if (self.pagerStrip.superview == self.view) {
         self.pagerStrip.frame = CGRectMake(0, 0, size.width, [self.pagerStrip sizeThatFits:self.view.bounds.size].height);
+        [self.pagerStrip layoutIfNeeded];
         pagerStripBottom = CGRectGetMaxY(self.pagerStrip.bounds);
     }
     
     self.pagerScrollView.frame = CGRectMake(0, pagerStripBottom, size.width, (size.height - pagerStripBottom));
+    [self.pagerScrollView layoutIfNeeded];
     
     CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.pagerScrollView.bounds), CGRectGetHeight(self.pagerScrollView.bounds));
     for (UIViewController *viewController in self.viewControllers) {
@@ -250,10 +253,12 @@
     if (_currentViewController != currentViewController) {
         _currentViewController = currentViewController;
         
-        [self scrollToViewController:self.currentViewController animated:animated];
-        
-        if (!animated) {
-            [self didEndScrolling];
+        if ([self isViewLoaded] && !self.callDidEndScrollingOnNextViewDidLayoutSubviews) {
+            [self scrollToViewController:self.currentViewController animated:animated];
+            
+            if (!animated) {
+                [self didEndScrolling];
+            }
         }
     }
 }
