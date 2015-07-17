@@ -7,340 +7,323 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0AEF8CE2A815C000D94B2E46 /* Pods-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 005E477477892A846A8EC2DD /* Pods-MRGPagerController-dummy.m */; };
-		127594535AB7C974BDC651D5 /* MRGPagerStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = A30968986A242A01A96E4294 /* MRGPagerStrip.h */; };
-		13CF8730498DCC8F24B51553 /* MRGPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA525359A7573F491A136E90 /* MRGPagerController.m */; };
-		1671A28B5792DD1FA563E048 /* MRGPagerStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = A30968986A242A01A96E4294 /* MRGPagerStrip.h */; };
-		1D26D889F5E62FBBBC1100DA /* MRGPagerTitleStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FE720614E75D83F6434D4 /* MRGPagerTitleStrip.m */; };
-		369AAA30A45DCAD71C37B714 /* MRGPagerTitleStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = F43FE720614E75D83F6434D4 /* MRGPagerTitleStrip.m */; };
-		4B07D9E8E3EFC16D6EC4CB2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F008EFE7BBAA5750C6C4131B /* Foundation.framework */; };
-		6E9D6EFC1A4169349CBC2C05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F008EFE7BBAA5750C6C4131B /* Foundation.framework */; };
-		7AEA052C0B8911EDCA77665B /* MRGPagerTitleStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FCB5452B0391B1A58B6CD52 /* MRGPagerTitleStrip.h */; };
-		88A9BEC257D689D1A107CF69 /* MRGPagerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4189142C469A943BA683800F /* MRGPagerController.h */; };
-		95B93468C5F83702E37242B6 /* MRGPagerTabStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6602F1988E11B344F119 /* MRGPagerTabStrip.m */; };
-		BDE2DFA3D438FF9A4DD6AC7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F008EFE7BBAA5750C6C4131B /* Foundation.framework */; };
-		C82AA4AA77588E8F3F8E31D6 /* MRGPagerTabStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = D24B25479232795C3DA102CB /* MRGPagerTabStrip.h */; };
-		C8E1FA8A21911556C7031D9B /* MRGPagerTabStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9C6602F1988E11B344F119 /* MRGPagerTabStrip.m */; };
-		CF9370CC71CB443B0B578D4F /* MRGPagerTabStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = D24B25479232795C3DA102CB /* MRGPagerTabStrip.h */; };
-		D0784FF13AEE375738C970A0 /* MRGPagerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4189142C469A943BA683800F /* MRGPagerController.h */; };
-		D5493D5AAE7BAF77DFE546AA /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1339A687FED8D304A841EF3B /* Pods-Tests-dummy.m */; };
-		DD39B702D0CD19AAF5D53378 /* MRGPagerTitleStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FCB5452B0391B1A58B6CD52 /* MRGPagerTitleStrip.h */; };
-		E078AC5E487AC69DECE48681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F008EFE7BBAA5750C6C4131B /* Foundation.framework */; };
-		E148457E68FC6CE0F2443A12 /* MRGPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA525359A7573F491A136E90 /* MRGPagerController.m */; };
-		E8A9E487FBF6CDBED67BEA94 /* Pods-Tests-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC5B8CA1ADDBFC2F408BC9B1 /* Pods-Tests-MRGPagerController-dummy.m */; };
-		FFBE6E6C642F705EC53CC5D0 /* Pods-MRGPagerController-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F90D449598468D01B605314F /* Pods-MRGPagerController-MRGPagerController-dummy.m */; };
+		089C967AA294D6D254ACEF2C /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 541690F5CBEBED8E08C9049D /* Pods-Tests-dummy.m */; };
+		0903E08BD36A8AD41C5A38B8 /* MRGPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A237EB263FE24D4390D3FBA2 /* MRGPagerController.m */; };
+		0AA206C82045CEA780A9717A /* Pods-MRGPagerController-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA251AB73F651742B6E212 /* Pods-MRGPagerController-MRGPagerController-dummy.m */; };
+		0B2D2B5D9BCDDB7DC15201D0 /* MRGPagerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F80D39C8330E8DACC595126C /* MRGPagerController.h */; };
+		18A50B9740051E8876C0D89A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538530617C71132E3156499 /* Foundation.framework */; };
+		1F74504CD573290041F241F7 /* MRGPagerTabStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1EEBDC6A99594FE119D5AB /* MRGPagerTabStrip.m */; };
+		2CE9AA5F994EAAAC8FFDA784 /* MRGPagerStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E6B479601ABBAB77CD06D9E /* MRGPagerStrip.h */; };
+		42134E3F6B82B022779CE598 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538530617C71132E3156499 /* Foundation.framework */; };
+		4AA50E0EABAE6432075CCD19 /* MRGPagerTitleStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 294CD9D0242B6C9D29B00DD9 /* MRGPagerTitleStrip.h */; };
+		5DE3FD999C9076988580EEB7 /* Pods-Tests-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD3105459FC31BE99CBB0FD /* Pods-Tests-MRGPagerController-dummy.m */; };
+		63C1CF09CB24D42D813C0B72 /* MRGPagerTitleStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 294CD9D0242B6C9D29B00DD9 /* MRGPagerTitleStrip.h */; };
+		68FD0D6B640E3F990A007079 /* MRGPagerTabStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 760842E8E05A8FC40ED4CBFF /* MRGPagerTabStrip.h */; };
+		7338BEB40D55EBFD9BD62D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538530617C71132E3156499 /* Foundation.framework */; };
+		830229D7E27C7002C443DF89 /* MRGPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = A237EB263FE24D4390D3FBA2 /* MRGPagerController.m */; };
+		887F4EBCDFF0F87D993D6119 /* Pods-MRGPagerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88677FD4F9763B1729958904 /* Pods-MRGPagerController-dummy.m */; };
+		956825CE96D90665B4113E8E /* MRGPagerTabStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1EEBDC6A99594FE119D5AB /* MRGPagerTabStrip.m */; };
+		A82E636B9A99DDEBA8FC5DF1 /* MRGPagerTabStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 760842E8E05A8FC40ED4CBFF /* MRGPagerTabStrip.h */; };
+		B40DD0FC8856645DC611CABA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4538530617C71132E3156499 /* Foundation.framework */; };
+		D1B51B2C1FD9D417611FEA5B /* MRGPagerController.h in Headers */ = {isa = PBXBuildFile; fileRef = F80D39C8330E8DACC595126C /* MRGPagerController.h */; };
+		DDF57019582CAD153FEE2F6D /* MRGPagerStrip.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E6B479601ABBAB77CD06D9E /* MRGPagerStrip.h */; };
+		E0DD0B09F90F59DF141A86A8 /* MRGPagerTitleStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0416098648B8BE2E12DE3 /* MRGPagerTitleStrip.m */; };
+		E4D1E8FB46166D1CC3CCF1E8 /* MRGPagerTitleStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0416098648B8BE2E12DE3 /* MRGPagerTitleStrip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0603C45563D9E40D98892585 /* PBXContainerItemProxy */ = {
+		C7586E5A108A22E3EFC4D489 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 938AFB0116B4BD2FFF0BE796 /* Project object */;
+			containerPortal = F622E5FF587904EC15AC30CB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 98382A451E5BD991746588BE;
-			remoteInfo = "Pods-Tests-MRGPagerController";
-		};
-		733FA8525983BAEB7C100DF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 938AFB0116B4BD2FFF0BE796 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CFFDFB7F519E9038E4EC7114;
+			remoteGlobalIDString = 72468F1518FC58CD72DD8AF3;
 			remoteInfo = "Pods-MRGPagerController-MRGPagerController";
+		};
+		FF82826BFF24D2C5102ACCF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F622E5FF587904EC15AC30CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA88910A3C104FC3DF33D5AA;
+			remoteInfo = "Pods-Tests-MRGPagerController";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		005E477477892A846A8EC2DD /* Pods-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
-		0804A97F7B5D08737AB9486E /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		132A654366861E3645C3622F /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController-MRGPagerController-Private.xcconfig"; sourceTree = "<group>"; };
-		1339A687FED8D304A841EF3B /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		18B02E85EA4E2B60E1652F02 /* Pods-MRGPagerController-MRGPagerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGPagerController-MRGPagerController-prefix.pch"; sourceTree = "<group>"; };
-		1A2817189A976AE0DD192555 /* libPods-MRGPagerController-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2425F7E3B20EFDA1197F00F0 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		3C0240D4CB143AC7A32A1659 /* libPods-Tests-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3FCB5452B0391B1A58B6CD52 /* MRGPagerTitleStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerTitleStrip.h; sourceTree = "<group>"; };
-		4189142C469A943BA683800F /* MRGPagerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerController.h; sourceTree = "<group>"; };
-		52068D4726C2E15AD70CDEF0 /* libPods-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6436A3CEB70FA7B75E28B46E /* Pods-MRGPagerController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController.release.xcconfig"; sourceTree = "<group>"; };
-		77638F9DD12471138D5222A0 /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
-		83EEFE3E968F99ED1636F9D2 /* Pods-MRGPagerController-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGPagerController-environment.h"; sourceTree = "<group>"; };
-		A1D09A59F098D54AFDF37E43 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A30968986A242A01A96E4294 /* MRGPagerStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerStrip.h; sourceTree = "<group>"; };
-		A478FC0EB81A02C01899EB36 /* Pods-MRGPagerController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController.debug.xcconfig"; sourceTree = "<group>"; };
-		AC2B6498C5928A8F0F506B4A /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B16511FE46D6A04E077FC898 /* Pods-MRGPagerController-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MRGPagerController-resources.sh"; sourceTree = "<group>"; };
-		B9FB6896DA968D90031B57B7 /* Pods-Tests-MRGPagerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-MRGPagerController.xcconfig"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController.xcconfig"; sourceTree = "<group>"; };
-		BF878D13773359B78D376A13 /* Pods-MRGPagerController-MRGPagerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController-MRGPagerController.xcconfig"; sourceTree = "<group>"; };
-		CCD24EDBD423C552433BA3F5 /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		CE9C6602F1988E11B344F119 /* MRGPagerTabStrip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerTabStrip.m; sourceTree = "<group>"; };
-		D0732DA844F4FC8F81D95A7C /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
-		D24B25479232795C3DA102CB /* MRGPagerTabStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerTabStrip.h; sourceTree = "<group>"; };
-		D50576121B9D0685AE2A26B2 /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E7CA8C1B0CBBCBB446ECE29F /* Pods-MRGPagerController-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MRGPagerController-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EC5B8CA1ADDBFC2F408BC9B1 /* Pods-Tests-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-MRGPagerController-dummy.m"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
-		EFBB2DB87814E08AACC8F9B5 /* Pods-MRGPagerController-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MRGPagerController-acknowledgements.plist"; sourceTree = "<group>"; };
-		F008EFE7BBAA5750C6C4131B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		F037A777E25009FFE57BC0F3 /* Pods-Tests-MRGPagerController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-MRGPagerController-Private.xcconfig"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-Private.xcconfig"; sourceTree = "<group>"; };
-		F43FE720614E75D83F6434D4 /* MRGPagerTitleStrip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerTitleStrip.m; sourceTree = "<group>"; };
-		F90D449598468D01B605314F /* Pods-MRGPagerController-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGPagerController-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
-		FA525359A7573F491A136E90 /* MRGPagerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerController.m; sourceTree = "<group>"; };
-		FFF676E6B43DF09DDED0B883 /* Pods-Tests-MRGPagerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-MRGPagerController-prefix.pch"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch"; sourceTree = "<group>"; };
+		180F78945B0921A8F49EA0A1 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19A806ECB0B328DE0D0FC84F /* Pods-MRGPagerController-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MRGPagerController-acknowledgements.markdown"; sourceTree = "<group>"; };
+		26BAE13EDB499095EF768209 /* Pods-MRGPagerController-MRGPagerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGPagerController-MRGPagerController-prefix.pch"; sourceTree = "<group>"; };
+		294CD9D0242B6C9D29B00DD9 /* MRGPagerTitleStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerTitleStrip.h; sourceTree = "<group>"; };
+		2C768318BA6C02083E12F780 /* Pods-MRGPagerController-MRGPagerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController-MRGPagerController.xcconfig"; sourceTree = "<group>"; };
+		33FC40FE6C408F1ED88B4E42 /* Pods-Tests-MRGPagerController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-MRGPagerController-Private.xcconfig"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-Private.xcconfig"; sourceTree = "<group>"; };
+		4538530617C71132E3156499 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		48A0416098648B8BE2E12DE3 /* MRGPagerTitleStrip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerTitleStrip.m; sourceTree = "<group>"; };
+		4DCB372CE4A8649AAFA7A9D4 /* Pods-MRGPagerController-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MRGPagerController-acknowledgements.plist"; sourceTree = "<group>"; };
+		536DD0A18AD4AB17739E4A66 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		541690F5CBEBED8E08C9049D /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
+		5A7947E2B035E6FE99E85549 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E6B479601ABBAB77CD06D9E /* MRGPagerStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerStrip.h; sourceTree = "<group>"; };
+		746AC71E9AED83D08D93BAFF /* Pods-MRGPagerController-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MRGPagerController-resources.sh"; sourceTree = "<group>"; };
+		760842E8E05A8FC40ED4CBFF /* MRGPagerTabStrip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerTabStrip.h; sourceTree = "<group>"; };
+		7A1EEBDC6A99594FE119D5AB /* MRGPagerTabStrip.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerTabStrip.m; sourceTree = "<group>"; };
+		7A2A86F36C8FF556B7F61943 /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController-MRGPagerController-Private.xcconfig"; sourceTree = "<group>"; };
+		878B5B22D23AF6F7074795DC /* libPods-Tests-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88677FD4F9763B1729958904 /* Pods-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
+		8B01252C4BD43332C0FD8580 /* Pods-MRGPagerController-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGPagerController-environment.h"; sourceTree = "<group>"; };
+		98F6A6E17817C95E859651D7 /* Pods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-resources.sh"; sourceTree = "<group>"; };
+		9D1B2F1A2A710EA06165696B /* Pods-MRGPagerController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController.release.xcconfig"; sourceTree = "<group>"; };
+		A237EB263FE24D4390D3FBA2 /* MRGPagerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGPagerController.m; sourceTree = "<group>"; };
+		A6EE7F7378FD0022C414FAE5 /* libPods-MRGPagerController-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF4282E5DB07B37D68B6337 /* Pods-Tests-MRGPagerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests-MRGPagerController.xcconfig"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController.xcconfig"; sourceTree = "<group>"; };
+		B9DDBEC8CFDFD41983DD999C /* Pods-MRGPagerController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGPagerController.debug.xcconfig"; sourceTree = "<group>"; };
+		BCD57C37F50E522DE48112B0 /* Pods-Tests-MRGPagerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-Tests-MRGPagerController-prefix.pch"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch"; sourceTree = "<group>"; };
+		C8925F528B71C86573CAC222 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D93BA3FC7D22E342CC66D62D /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DDC4209FC1CEE6E794F589E2 /* Pods-Tests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-environment.h"; sourceTree = "<group>"; };
+		DDD3105459FC31BE99CBB0FD /* Pods-Tests-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-Tests-MRGPagerController-dummy.m"; path = "../Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
+		E0FF711001CA16F57562A66F /* libPods-MRGPagerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CA251AB73F651742B6E212 /* Pods-MRGPagerController-MRGPagerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGPagerController-MRGPagerController-dummy.m"; sourceTree = "<group>"; };
+		F510174B342E59E28E7E0B9F /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		F80D39C8330E8DACC595126C /* MRGPagerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGPagerController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5D779323458FF05203BAF239 /* Frameworks */ = {
+		2F599BC933E1D7D5BD4311C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDE2DFA3D438FF9A4DD6AC7E /* Foundation.framework in Frameworks */,
+				42134E3F6B82B022779CE598 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7461FAFBFA916B2906A5A6C5 /* Frameworks */ = {
+		6B1853564F2EB7DEEDF2B643 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B07D9E8E3EFC16D6EC4CB2B /* Foundation.framework in Frameworks */,
+				B40DD0FC8856645DC611CABA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97F5C539B8F3E233F4E04B89 /* Frameworks */ = {
+		8E763D6E0E01B3A7677BF9AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E078AC5E487AC69DECE48681 /* Foundation.framework in Frameworks */,
+				18A50B9740051E8876C0D89A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9B13FCCD3F81843729C4B2F7 /* Frameworks */ = {
+		AF15569FA6A1EB167DC2A743 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E9D6EFC1A4169349CBC2C05 /* Foundation.framework in Frameworks */,
+				7338BEB40D55EBFD9BD62D1D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		45C75F523709E691ED6449CB /* iOS */ = {
+		043A5F02D5772B61F36A7502 = {
 			isa = PBXGroup;
 			children = (
-				F008EFE7BBAA5750C6C4131B /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4D6799AB6648EB239B2A9191 = {
-			isa = PBXGroup;
-			children = (
-				2425F7E3B20EFDA1197F00F0 /* Podfile */,
-				AD2C0607B99E0E27023EA0AC /* Development Pods */,
-				BBF9DF5DE5C91D0BFBD94A3F /* Frameworks */,
-				EFE9B7D975F4C5BB7B06385F /* Products */,
-				58EE50873263622C368DB369 /* Targets Support Files */,
+				536DD0A18AD4AB17739E4A66 /* Podfile */,
+				BE403CA2596C7010B576E1B5 /* Development Pods */,
+				1792823C8A40F92E4E3DD903 /* Frameworks */,
+				221DB0D278C982A911B5707C /* Products */,
+				AB69AC556E3D6D0DBB5C6BD3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		58EE50873263622C368DB369 /* Targets Support Files */ = {
+		1792823C8A40F92E4E3DD903 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4170D8D9B74DB1A06684712 /* Pods-MRGPagerController */,
-				8108EA9516332A30D5D4B151 /* Pods-Tests */,
+				960CDAC46B7A18758EB5D213 /* iOS */,
 			);
-			name = "Targets Support Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8108EA9516332A30D5D4B151 /* Pods-Tests */ = {
+		1898ECD9AA5D75E13F444338 /* Pods-MRGPagerController */ = {
 			isa = PBXGroup;
 			children = (
-				D50576121B9D0685AE2A26B2 /* Pods-Tests-acknowledgements.markdown */,
-				CCD24EDBD423C552433BA3F5 /* Pods-Tests-acknowledgements.plist */,
-				1339A687FED8D304A841EF3B /* Pods-Tests-dummy.m */,
-				D0732DA844F4FC8F81D95A7C /* Pods-Tests-environment.h */,
-				77638F9DD12471138D5222A0 /* Pods-Tests-resources.sh */,
-				A1D09A59F098D54AFDF37E43 /* Pods-Tests.debug.xcconfig */,
-				0804A97F7B5D08737AB9486E /* Pods-Tests.release.xcconfig */,
-			);
-			name = "Pods-Tests";
-			path = "Target Support Files/Pods-Tests";
-			sourceTree = "<group>";
-		};
-		8C08AD922F5D2019CF7E112F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BF878D13773359B78D376A13 /* Pods-MRGPagerController-MRGPagerController.xcconfig */,
-				132A654366861E3645C3622F /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */,
-				F90D449598468D01B605314F /* Pods-MRGPagerController-MRGPagerController-dummy.m */,
-				18B02E85EA4E2B60E1652F02 /* Pods-MRGPagerController-MRGPagerController-prefix.pch */,
-				B9FB6896DA968D90031B57B7 /* Pods-Tests-MRGPagerController.xcconfig */,
-				F037A777E25009FFE57BC0F3 /* Pods-Tests-MRGPagerController-Private.xcconfig */,
-				EC5B8CA1ADDBFC2F408BC9B1 /* Pods-Tests-MRGPagerController-dummy.m */,
-				FFF676E6B43DF09DDED0B883 /* Pods-Tests-MRGPagerController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Pods-MRGPagerController-MRGPagerController";
-			sourceTree = "<group>";
-		};
-		AD2C0607B99E0E27023EA0AC /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E649C6B37489CB67F2906DF5 /* MRGPagerController */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		B4170D8D9B74DB1A06684712 /* Pods-MRGPagerController */ = {
-			isa = PBXGroup;
-			children = (
-				E7CA8C1B0CBBCBB446ECE29F /* Pods-MRGPagerController-acknowledgements.markdown */,
-				EFBB2DB87814E08AACC8F9B5 /* Pods-MRGPagerController-acknowledgements.plist */,
-				005E477477892A846A8EC2DD /* Pods-MRGPagerController-dummy.m */,
-				83EEFE3E968F99ED1636F9D2 /* Pods-MRGPagerController-environment.h */,
-				B16511FE46D6A04E077FC898 /* Pods-MRGPagerController-resources.sh */,
-				A478FC0EB81A02C01899EB36 /* Pods-MRGPagerController.debug.xcconfig */,
-				6436A3CEB70FA7B75E28B46E /* Pods-MRGPagerController.release.xcconfig */,
+				19A806ECB0B328DE0D0FC84F /* Pods-MRGPagerController-acknowledgements.markdown */,
+				4DCB372CE4A8649AAFA7A9D4 /* Pods-MRGPagerController-acknowledgements.plist */,
+				88677FD4F9763B1729958904 /* Pods-MRGPagerController-dummy.m */,
+				8B01252C4BD43332C0FD8580 /* Pods-MRGPagerController-environment.h */,
+				746AC71E9AED83D08D93BAFF /* Pods-MRGPagerController-resources.sh */,
+				B9DDBEC8CFDFD41983DD999C /* Pods-MRGPagerController.debug.xcconfig */,
+				9D1B2F1A2A710EA06165696B /* Pods-MRGPagerController.release.xcconfig */,
 			);
 			name = "Pods-MRGPagerController";
 			path = "Target Support Files/Pods-MRGPagerController";
 			sourceTree = "<group>";
 		};
-		BBF9DF5DE5C91D0BFBD94A3F /* Frameworks */ = {
+		221DB0D278C982A911B5707C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45C75F523709E691ED6449CB /* iOS */,
+				E0FF711001CA16F57562A66F /* libPods-MRGPagerController.a */,
+				A6EE7F7378FD0022C414FAE5 /* libPods-MRGPagerController-MRGPagerController.a */,
+				180F78945B0921A8F49EA0A1 /* libPods-Tests.a */,
+				878B5B22D23AF6F7074795DC /* libPods-Tests-MRGPagerController.a */,
 			);
-			name = Frameworks;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		D79B0375A3A380A4874563DF /* Pod */ = {
+		59652EB93CC7EB917276A5FD /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				DBB4BC97D5064E5BBF89E68F /* Classes */,
+				88029C5B8DA6D6C4E372CD7F /* Classes */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
 		};
-		DBB4BC97D5064E5BBF89E68F /* Classes */ = {
+		82D77E2769F67C6EF099D047 /* Pods-Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4189142C469A943BA683800F /* MRGPagerController.h */,
-				FA525359A7573F491A136E90 /* MRGPagerController.m */,
-				A30968986A242A01A96E4294 /* MRGPagerStrip.h */,
-				D24B25479232795C3DA102CB /* MRGPagerTabStrip.h */,
-				CE9C6602F1988E11B344F119 /* MRGPagerTabStrip.m */,
-				3FCB5452B0391B1A58B6CD52 /* MRGPagerTitleStrip.h */,
-				F43FE720614E75D83F6434D4 /* MRGPagerTitleStrip.m */,
+				D93BA3FC7D22E342CC66D62D /* Pods-Tests-acknowledgements.markdown */,
+				F510174B342E59E28E7E0B9F /* Pods-Tests-acknowledgements.plist */,
+				541690F5CBEBED8E08C9049D /* Pods-Tests-dummy.m */,
+				DDC4209FC1CEE6E794F589E2 /* Pods-Tests-environment.h */,
+				98F6A6E17817C95E859651D7 /* Pods-Tests-resources.sh */,
+				5A7947E2B035E6FE99E85549 /* Pods-Tests.debug.xcconfig */,
+				C8925F528B71C86573CAC222 /* Pods-Tests.release.xcconfig */,
 			);
-			path = Classes;
+			name = "Pods-Tests";
+			path = "Target Support Files/Pods-Tests";
 			sourceTree = "<group>";
 		};
-		E649C6B37489CB67F2906DF5 /* MRGPagerController */ = {
+		8462CC41FD9DEA0438C8E7BA /* MRGPagerController */ = {
 			isa = PBXGroup;
 			children = (
-				D79B0375A3A380A4874563DF /* Pod */,
-				8C08AD922F5D2019CF7E112F /* Support Files */,
+				59652EB93CC7EB917276A5FD /* Pod */,
+				89CC12402FBEF0CFEAEF205C /* Support Files */,
 			);
 			name = MRGPagerController;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		EFE9B7D975F4C5BB7B06385F /* Products */ = {
+		88029C5B8DA6D6C4E372CD7F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				52068D4726C2E15AD70CDEF0 /* libPods-MRGPagerController.a */,
-				1A2817189A976AE0DD192555 /* libPods-MRGPagerController-MRGPagerController.a */,
-				AC2B6498C5928A8F0F506B4A /* libPods-Tests.a */,
-				3C0240D4CB143AC7A32A1659 /* libPods-Tests-MRGPagerController.a */,
+				F80D39C8330E8DACC595126C /* MRGPagerController.h */,
+				A237EB263FE24D4390D3FBA2 /* MRGPagerController.m */,
+				5E6B479601ABBAB77CD06D9E /* MRGPagerStrip.h */,
+				760842E8E05A8FC40ED4CBFF /* MRGPagerTabStrip.h */,
+				7A1EEBDC6A99594FE119D5AB /* MRGPagerTabStrip.m */,
+				294CD9D0242B6C9D29B00DD9 /* MRGPagerTitleStrip.h */,
+				48A0416098648B8BE2E12DE3 /* MRGPagerTitleStrip.m */,
 			);
-			name = Products;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		89CC12402FBEF0CFEAEF205C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C768318BA6C02083E12F780 /* Pods-MRGPagerController-MRGPagerController.xcconfig */,
+				7A2A86F36C8FF556B7F61943 /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */,
+				E2CA251AB73F651742B6E212 /* Pods-MRGPagerController-MRGPagerController-dummy.m */,
+				26BAE13EDB499095EF768209 /* Pods-MRGPagerController-MRGPagerController-prefix.pch */,
+				ADF4282E5DB07B37D68B6337 /* Pods-Tests-MRGPagerController.xcconfig */,
+				33FC40FE6C408F1ED88B4E42 /* Pods-Tests-MRGPagerController-Private.xcconfig */,
+				DDD3105459FC31BE99CBB0FD /* Pods-Tests-MRGPagerController-dummy.m */,
+				BCD57C37F50E522DE48112B0 /* Pods-Tests-MRGPagerController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Pods-MRGPagerController-MRGPagerController";
+			sourceTree = "<group>";
+		};
+		960CDAC46B7A18758EB5D213 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4538530617C71132E3156499 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB69AC556E3D6D0DBB5C6BD3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1898ECD9AA5D75E13F444338 /* Pods-MRGPagerController */,
+				82D77E2769F67C6EF099D047 /* Pods-Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BE403CA2596C7010B576E1B5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8462CC41FD9DEA0438C8E7BA /* MRGPagerController */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5DCE3586235DA32AD43219DE /* Headers */ = {
+		75C343C7A4E72411E3833299 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A9BEC257D689D1A107CF69 /* MRGPagerController.h in Headers */,
-				127594535AB7C974BDC651D5 /* MRGPagerStrip.h in Headers */,
-				C82AA4AA77588E8F3F8E31D6 /* MRGPagerTabStrip.h in Headers */,
-				7AEA052C0B8911EDCA77665B /* MRGPagerTitleStrip.h in Headers */,
+				0B2D2B5D9BCDDB7DC15201D0 /* MRGPagerController.h in Headers */,
+				2CE9AA5F994EAAAC8FFDA784 /* MRGPagerStrip.h in Headers */,
+				A82E636B9A99DDEBA8FC5DF1 /* MRGPagerTabStrip.h in Headers */,
+				4AA50E0EABAE6432075CCD19 /* MRGPagerTitleStrip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97A07EAF7D9FE11DC7142680 /* Headers */ = {
+		8A63183192B80A96BF1F8969 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0784FF13AEE375738C970A0 /* MRGPagerController.h in Headers */,
-				1671A28B5792DD1FA563E048 /* MRGPagerStrip.h in Headers */,
-				CF9370CC71CB443B0B578D4F /* MRGPagerTabStrip.h in Headers */,
-				DD39B702D0CD19AAF5D53378 /* MRGPagerTitleStrip.h in Headers */,
+				D1B51B2C1FD9D417611FEA5B /* MRGPagerController.h in Headers */,
+				DDF57019582CAD153FEE2F6D /* MRGPagerStrip.h in Headers */,
+				68FD0D6B640E3F990A007079 /* MRGPagerTabStrip.h in Headers */,
+				63C1CF09CB24D42D813C0B72 /* MRGPagerTitleStrip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		19745924DF187E8066437AD8 /* Pods-MRGPagerController */ = {
+		2B390172A1302E30769CB768 /* Pods-MRGPagerController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 81DFD5FD8500E9FB7F14333C /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController" */;
+			buildConfigurationList = 4185EEA711D478C9B6B2C020 /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController" */;
 			buildPhases = (
-				416C5C94804B87E0A561AF49 /* Sources */,
-				5D779323458FF05203BAF239 /* Frameworks */,
+				A3F0650040E11F36FD7A88AF /* Sources */,
+				2F599BC933E1D7D5BD4311C5 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C917FAE68D72B73116FDA1A4 /* PBXTargetDependency */,
+				95818C817E35458DC990FA33 /* PBXTargetDependency */,
 			);
 			name = "Pods-MRGPagerController";
 			productName = "Pods-MRGPagerController";
-			productReference = 52068D4726C2E15AD70CDEF0 /* libPods-MRGPagerController.a */;
+			productReference = E0FF711001CA16F57562A66F /* libPods-MRGPagerController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		98382A451E5BD991746588BE /* Pods-Tests-MRGPagerController */ = {
+		6C26DEB6860B343ACDF2E327 /* Pods-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E4B61CC83F7D687F38A5212 /* Build configuration list for PBXNativeTarget "Pods-Tests-MRGPagerController" */;
+			buildConfigurationList = EAC74D8001227FF829CBFFB6 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
 			buildPhases = (
-				1F3A1A2F280658AF60BA081A /* Sources */,
-				9B13FCCD3F81843729C4B2F7 /* Frameworks */,
-				5DCE3586235DA32AD43219DE /* Headers */,
+				44F6E9787BC3364F1E206BD4 /* Sources */,
+				6B1853564F2EB7DEEDF2B643 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = "Pods-Tests-MRGPagerController";
-			productName = "Pods-Tests-MRGPagerController";
-			productReference = 3C0240D4CB143AC7A32A1659 /* libPods-Tests-MRGPagerController.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A139D7FA146AC08C39A0BE44 /* Pods-Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7A9998E2825FB1BC82D98E39 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
-			buildPhases = (
-				FED04C3E373080D8925787D7 /* Sources */,
-				97F5C539B8F3E233F4E04B89 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				03A20C6FD21FC52248815CA3 /* PBXTargetDependency */,
+				7FF185D8443B14AE2D2B30D8 /* PBXTargetDependency */,
 			);
 			name = "Pods-Tests";
 			productName = "Pods-Tests";
-			productReference = AC2B6498C5928A8F0F506B4A /* libPods-Tests.a */;
+			productReference = 180F78945B0921A8F49EA0A1 /* libPods-Tests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		CFFDFB7F519E9038E4EC7114 /* Pods-MRGPagerController-MRGPagerController */ = {
+		72468F1518FC58CD72DD8AF3 /* Pods-MRGPagerController-MRGPagerController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB516CA10CD3DB427EC7737E /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController-MRGPagerController" */;
+			buildConfigurationList = DC5612087519E2E59877ACF8 /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController-MRGPagerController" */;
 			buildPhases = (
-				27BAAEBA2A347B38B90AB4A7 /* Sources */,
-				7461FAFBFA916B2906A5A6C5 /* Frameworks */,
-				97A07EAF7D9FE11DC7142680 /* Headers */,
+				7A85D40DD03E804E954209D5 /* Sources */,
+				AF15569FA6A1EB167DC2A743 /* Frameworks */,
+				8A63183192B80A96BF1F8969 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -348,97 +331,228 @@
 			);
 			name = "Pods-MRGPagerController-MRGPagerController";
 			productName = "Pods-MRGPagerController-MRGPagerController";
-			productReference = 1A2817189A976AE0DD192555 /* libPods-MRGPagerController-MRGPagerController.a */;
+			productReference = A6EE7F7378FD0022C414FAE5 /* libPods-MRGPagerController-MRGPagerController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CA88910A3C104FC3DF33D5AA /* Pods-Tests-MRGPagerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812CB4B5C3AC75586BC8F9FD /* Build configuration list for PBXNativeTarget "Pods-Tests-MRGPagerController" */;
+			buildPhases = (
+				62BCE5AF5D151803E3259A82 /* Sources */,
+				8E763D6E0E01B3A7677BF9AC /* Frameworks */,
+				75C343C7A4E72411E3833299 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Tests-MRGPagerController";
+			productName = "Pods-Tests-MRGPagerController";
+			productReference = 878B5B22D23AF6F7074795DC /* libPods-Tests-MRGPagerController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		938AFB0116B4BD2FFF0BE796 /* Project object */ = {
+		F622E5FF587904EC15AC30CB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 1212BC9FDE1A27DAE62BCCEC /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 10A024349B8EA89E9048FFFC /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4D6799AB6648EB239B2A9191;
-			productRefGroup = EFE9B7D975F4C5BB7B06385F /* Products */;
+			mainGroup = 043A5F02D5772B61F36A7502;
+			productRefGroup = 221DB0D278C982A911B5707C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19745924DF187E8066437AD8 /* Pods-MRGPagerController */,
-				CFFDFB7F519E9038E4EC7114 /* Pods-MRGPagerController-MRGPagerController */,
-				A139D7FA146AC08C39A0BE44 /* Pods-Tests */,
-				98382A451E5BD991746588BE /* Pods-Tests-MRGPagerController */,
+				2B390172A1302E30769CB768 /* Pods-MRGPagerController */,
+				72468F1518FC58CD72DD8AF3 /* Pods-MRGPagerController-MRGPagerController */,
+				6C26DEB6860B343ACDF2E327 /* Pods-Tests */,
+				CA88910A3C104FC3DF33D5AA /* Pods-Tests-MRGPagerController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1F3A1A2F280658AF60BA081A /* Sources */ = {
+		44F6E9787BC3364F1E206BD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E148457E68FC6CE0F2443A12 /* MRGPagerController.m in Sources */,
-				C8E1FA8A21911556C7031D9B /* MRGPagerTabStrip.m in Sources */,
-				1D26D889F5E62FBBBC1100DA /* MRGPagerTitleStrip.m in Sources */,
-				E8A9E487FBF6CDBED67BEA94 /* Pods-Tests-MRGPagerController-dummy.m in Sources */,
+				089C967AA294D6D254ACEF2C /* Pods-Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27BAAEBA2A347B38B90AB4A7 /* Sources */ = {
+		62BCE5AF5D151803E3259A82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13CF8730498DCC8F24B51553 /* MRGPagerController.m in Sources */,
-				95B93468C5F83702E37242B6 /* MRGPagerTabStrip.m in Sources */,
-				369AAA30A45DCAD71C37B714 /* MRGPagerTitleStrip.m in Sources */,
-				FFBE6E6C642F705EC53CC5D0 /* Pods-MRGPagerController-MRGPagerController-dummy.m in Sources */,
+				0903E08BD36A8AD41C5A38B8 /* MRGPagerController.m in Sources */,
+				1F74504CD573290041F241F7 /* MRGPagerTabStrip.m in Sources */,
+				E0DD0B09F90F59DF141A86A8 /* MRGPagerTitleStrip.m in Sources */,
+				5DE3FD999C9076988580EEB7 /* Pods-Tests-MRGPagerController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		416C5C94804B87E0A561AF49 /* Sources */ = {
+		7A85D40DD03E804E954209D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AEF8CE2A815C000D94B2E46 /* Pods-MRGPagerController-dummy.m in Sources */,
+				830229D7E27C7002C443DF89 /* MRGPagerController.m in Sources */,
+				956825CE96D90665B4113E8E /* MRGPagerTabStrip.m in Sources */,
+				E4D1E8FB46166D1CC3CCF1E8 /* MRGPagerTitleStrip.m in Sources */,
+				0AA206C82045CEA780A9717A /* Pods-MRGPagerController-MRGPagerController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FED04C3E373080D8925787D7 /* Sources */ = {
+		A3F0650040E11F36FD7A88AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5493D5AAE7BAF77DFE546AA /* Pods-Tests-dummy.m in Sources */,
+				887F4EBCDFF0F87D993D6119 /* Pods-MRGPagerController-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03A20C6FD21FC52248815CA3 /* PBXTargetDependency */ = {
+		7FF185D8443B14AE2D2B30D8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Tests-MRGPagerController";
-			target = 98382A451E5BD991746588BE /* Pods-Tests-MRGPagerController */;
-			targetProxy = 0603C45563D9E40D98892585 /* PBXContainerItemProxy */;
+			target = CA88910A3C104FC3DF33D5AA /* Pods-Tests-MRGPagerController */;
+			targetProxy = FF82826BFF24D2C5102ACCF1 /* PBXContainerItemProxy */;
 		};
-		C917FAE68D72B73116FDA1A4 /* PBXTargetDependency */ = {
+		95818C817E35458DC990FA33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MRGPagerController-MRGPagerController";
-			target = CFFDFB7F519E9038E4EC7114 /* Pods-MRGPagerController-MRGPagerController */;
-			targetProxy = 733FA8525983BAEB7C100DF4 /* PBXContainerItemProxy */;
+			target = 72468F1518FC58CD72DD8AF3 /* Pods-MRGPagerController-MRGPagerController */;
+			targetProxy = C7586E5A108A22E3EFC4D489 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0FF4E7F70F0FF5A5B1FA1BCE /* Release */ = {
+		067F1470B5139C9565EB22B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6436A3CEB70FA7B75E28B46E /* Pods-MRGPagerController.release.xcconfig */;
+			baseConfigurationReference = 33FC40FE6C408F1ED88B4E42 /* Pods-Tests-MRGPagerController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		218F74FD4B4C9E4CDEFAA64D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2A86F36C8FF556B7F61943 /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGPagerController-MRGPagerController/Pods-MRGPagerController-MRGPagerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3AB0A5FBDA0E67936EBEA3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		69002DF6772D2B88524EE4F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9DDBEC8CFDFD41983DD999C /* Pods-MRGPagerController.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		98CA60EF30A86DDDBCC39DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A2A86F36C8FF556B7F61943 /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGPagerController-MRGPagerController/Pods-MRGPagerController-MRGPagerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		98F465403ED0D9F014441782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33FC40FE6C408F1ED88B4E42 /* Pods-Tests-MRGPagerController-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AB708182180D1D28CCC1C2A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D1B2F1A2A710EA06165696B /* Pods-MRGPagerController.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -452,7 +566,7 @@
 			};
 			name = Release;
 		};
-		2F1D43E8B4588849BD4346A6 /* Debug */ = {
+		AFC37F8B3C9156AE4628D8DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -491,123 +605,9 @@
 			};
 			name = Debug;
 		};
-		35257C41FC82031D9265DE0D /* Debug */ = {
+		CF21DBCB75B1A79A404125BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A478FC0EB81A02C01899EB36 /* Pods-MRGPagerController.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		53A1FCAD42835CE538DA9118 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 132A654366861E3645C3622F /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGPagerController-MRGPagerController/Pods-MRGPagerController-MRGPagerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		83EE038BD62A5EB90B043F53 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F037A777E25009FFE57BC0F3 /* Pods-Tests-MRGPagerController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		A07E6F3B1FB02A2E03529E10 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 132A654366861E3645C3622F /* Pods-MRGPagerController-MRGPagerController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGPagerController-MRGPagerController/Pods-MRGPagerController-MRGPagerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B1C2A359A869DD9E8E0C2979 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F037A777E25009FFE57BC0F3 /* Pods-Tests-MRGPagerController-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-Tests-MRGPagerController/Pods-Tests-MRGPagerController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		BC949DF1E9A047EB3EECC327 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F250D982C5D67A1D3358F46B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0804A97F7B5D08737AB9486E /* Pods-Tests.release.xcconfig */;
+			baseConfigurationReference = C8925F528B71C86573CAC222 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -621,9 +621,9 @@
 			};
 			name = Release;
 		};
-		FFFD9C4153EAB79218E37F6C /* Debug */ = {
+		E0847D6680960555AF01AE58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1D09A59F098D54AFDF37E43 /* Pods-Tests.debug.xcconfig */;
+			baseConfigurationReference = 5A7947E2B035E6FE99E85549 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -640,52 +640,52 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1212BC9FDE1A27DAE62BCCEC /* Build configuration list for PBXProject "Pods" */ = {
+		10A024349B8EA89E9048FFFC /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F1D43E8B4588849BD4346A6 /* Debug */,
-				BC949DF1E9A047EB3EECC327 /* Release */,
+				AFC37F8B3C9156AE4628D8DF /* Debug */,
+				3AB0A5FBDA0E67936EBEA3BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4E4B61CC83F7D687F38A5212 /* Build configuration list for PBXNativeTarget "Pods-Tests-MRGPagerController" */ = {
+		4185EEA711D478C9B6B2C020 /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				83EE038BD62A5EB90B043F53 /* Debug */,
-				B1C2A359A869DD9E8E0C2979 /* Release */,
+				69002DF6772D2B88524EE4F0 /* Debug */,
+				AB708182180D1D28CCC1C2A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7A9998E2825FB1BC82D98E39 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
+		812CB4B5C3AC75586BC8F9FD /* Build configuration list for PBXNativeTarget "Pods-Tests-MRGPagerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FFFD9C4153EAB79218E37F6C /* Debug */,
-				F250D982C5D67A1D3358F46B /* Release */,
+				067F1470B5139C9565EB22B8 /* Debug */,
+				98F465403ED0D9F014441782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		81DFD5FD8500E9FB7F14333C /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController" */ = {
+		DC5612087519E2E59877ACF8 /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController-MRGPagerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35257C41FC82031D9265DE0D /* Debug */,
-				0FF4E7F70F0FF5A5B1FA1BCE /* Release */,
+				218F74FD4B4C9E4CDEFAA64D /* Debug */,
+				98CA60EF30A86DDDBCC39DBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB516CA10CD3DB427EC7737E /* Build configuration list for PBXNativeTarget "Pods-MRGPagerController-MRGPagerController" */ = {
+		EAC74D8001227FF829CBFFB6 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A07E6F3B1FB02A2E03529E10 /* Debug */,
-				53A1FCAD42835CE538DA9118 /* Release */,
+				E0847D6680960555AF01AE58 /* Debug */,
+				CF21DBCB75B1A79A404125BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 938AFB0116B4BD2FFF0BE796 /* Project object */;
+	rootObject = F622E5FF587904EC15AC30CB /* Project object */;
 }
