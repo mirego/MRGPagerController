@@ -8,7 +8,7 @@
 
 // MRGPagerController
 #define COCOAPODS_POD_AVAILABLE_MRGPagerController
-#define COCOAPODS_VERSION_MAJOR_MRGPagerController 0
-#define COCOAPODS_VERSION_MINOR_MRGPagerController 1
-#define COCOAPODS_VERSION_PATCH_MRGPagerController 4
+#define COCOAPODS_VERSION_MAJOR_MRGPagerController 1
+#define COCOAPODS_VERSION_MINOR_MRGPagerController 0
+#define COCOAPODS_VERSION_PATCH_MRGPagerController 3
 

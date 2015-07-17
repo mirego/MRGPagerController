@@ -1,6 +1,6 @@
 {
   "name": "MRGPagerController",
-  "version": "0.1.4",
+  "version": "1.0.3",
   "summary": "An highly customizable pager controller.",
   "homepage": "https://github.com/Mirego/MRGPagerController",
   "license": "BSD 3-Clause",
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/Mirego/MRGPagerController.git",
-    "tag": "0.1.4"
+    "tag": "1.0.3"
   },
   "social_media_url": "https://twitter.com/Mirego",
   "platforms": {

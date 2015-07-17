@@ -33,7 +33,7 @@
 #import "MRGDemoTabStrip.h"
 
 @interface MRGViewController ()
-@property (nonatomic, weak) MRGPagerController *pager;
+@property (nonatomic) MRGPagerController *pagerController;
 @end
 
 @implementation MRGViewController
@@ -41,35 +41,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    MRGPagerController *pagerController = [[MRGPagerController alloc] initWithPagerStripClass:[MRGDemoTabStrip class]];
-    [self.view addSubview:pagerController.view];
-    [self addChildViewController:pagerController];
-    [self configurePager:pagerController];
-
-    self.pager = pagerController;
+    self.pagerController = [[MRGPagerController alloc] initWithPagerStripClass:[MRGDemoTabStrip class]];
+    
+    [self addChildViewController:self.pagerController];
+    [self.view addSubview:self.pagerController.view];
+    self.pagerController.view.frame = self.view.bounds;
+    self.pagerController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.pagerController didMoveToParentViewController:self];
+    
+    [self configurePager];
 }
 
-- (void)configurePager:(MRGPagerController *)controller {
+- (void)configurePager {
 
     NSArray *tabs = @[
-            [[MRGDemoController alloc] initWithTitle:@"Controller 1" text:@"label 1"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 2" text:@"label 2"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 3" text:@"label 3"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 4" text:@"label 4"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 5" text:@"label 5"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 6" text:@"label 6"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 7" text:@"label 7"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 8" text:@"label 8"],
-            [[MRGDemoController alloc] initWithTitle:@"Controller 9" text:@"label 9"]
+            [[MRGDemoController alloc] initWithTitle:@"1" text:@"1"],
+            [[MRGDemoController alloc] initWithTitle:@"2" text:@"2"],
+            [[MRGDemoController alloc] initWithTitle:@"3" text:@"3"],
+            [[MRGDemoController alloc] initWithTitle:@"4" text:@"4"],
+            [[MRGDemoController alloc] initWithTitle:@"5" text:@"5"],
+            [[MRGDemoController alloc] initWithTitle:@"6" text:@"6"],
+            [[MRGDemoController alloc] initWithTitle:@"7" text:@"7"],
+            [[MRGDemoController alloc] initWithTitle:@"8" text:@"8"],
+            [[MRGDemoController alloc] initWithTitle:@"9" text:@"9"]
     ];
 
-    controller.viewControllers = tabs;
-    controller.initialViewController = tabs[7];
-}
-
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    self.pager.view.frame = self.view.frame;
+    self.pagerController.viewControllers = tabs;
+    self.pagerController.currentViewController = tabs[7];
 }
 
 @end

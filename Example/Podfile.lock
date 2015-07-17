@@ -1,28 +1,14 @@
 PODS:
-  - Expecta (0.4.0)
-  - Expecta+Snapshots (1.3.2):
-    - Expecta (~> 0.3)
-    - FBSnapshotTestCase (= 1.6)
-  - FBSnapshotTestCase (1.6)
-  - MRGPagerController (0.1.4)
-  - Specta (0.2.1)
+  - MRGPagerController (1.0.3)
 
 DEPENDENCIES:
-  - Expecta
-  - Expecta+Snapshots
-  - FBSnapshotTestCase
   - MRGPagerController (from `../`)
-  - Specta (~> 0.2.1)
 
 EXTERNAL SOURCES:
   MRGPagerController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Expecta: 392a6b5bfb9f4097e47dd8064d9b732079490332
-  Expecta+Snapshots: 40c5ec43b43da3bae957f14fed5dc9177d08ec8b
-  FBSnapshotTestCase: 9d5fe43b29ae3a0ed8fc829477971b281038f748
-  MRGPagerController: 7bfca76c2fa626f7a166717aced0bcc6ee50be52
-  Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
+  MRGPagerController: acb4f1c5c553b2ea6406731bfd4582ee009438b9
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.37.2
