@@ -33,6 +33,7 @@
 @property (nonatomic) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic) UIScrollView *pagerScrollView;
 @property (nonatomic) BOOL isRotatingInterfaceOrientation;
+@property (nonatomic) BOOL isLayouting;
 @property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
 @property (nonatomic, weak) UIViewController *lastViewControllerEndedScrollingOn;
 @end
@@ -89,18 +90,29 @@
 
 #pragma mark - layout
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.isLayouting = YES;
+}
+
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
     [self layoutPager];
     
-    [self scrollToViewController:self.currentViewController animated:NO];
+    if (_currentViewController == nil) {
+        _currentViewController = [self.viewControllers firstObject];
+    }
+    
+    [self scrollToCurrentViewControllerAnimated:NO];
     [self hideViewControllersOutsideOfBounds];
     
     if (self.callDidEndScrollingOnNextViewDidLayoutSubviews) {
         self.callDidEndScrollingOnNextViewDidLayoutSubviews = NO;
         [self didEndScrolling];
     }
+    
+    self.isLayouting = NO;
 }
 
 - (void)layoutPager {
@@ -126,16 +138,30 @@
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     self.isRotatingInterfaceOrientation = YES;
+    
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+        if ((viewController != self.currentViewController)) {
+            [viewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:0];
+        }
+    }];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
     self.isRotatingInterfaceOrientation = NO;
+    
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+        if ((viewController != self.currentViewController)) {
+            [viewController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+        }
+    }];
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    [self scrollToViewController:self.currentViewController animated:NO];
+    [self scrollToCurrentViewControllerAnimated:NO];
     
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
@@ -143,6 +169,18 @@
         }
     }];
 }
+
+#ifdef __IPHONE_8_0
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+        if ((viewController != self.currentViewController)) {
+            [viewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+        }
+    }];
+}
+#endif
 
 - (void)updateViewControllersWithOldViewControllers:(NSArray *)oldViewControllers newViewControllers:(NSArray *)newViewControllers animated:(BOOL)animated {
     if ([self isViewLoaded] == NO) {
@@ -185,8 +223,8 @@
     }
 }
 
-- (void)scrollToViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    NSUInteger index = [self.viewControllers indexOfObject:viewController];
+- (void)scrollToCurrentViewControllerAnimated:(BOOL)animated {
+    NSUInteger index = [self.viewControllers indexOfObject:self.currentViewController];
     CGPoint contentOffset = CGPointMake(index != NSNotFound ? index * CGRectGetWidth(self.pagerScrollView.bounds) : 0, 0);
     [self.pagerScrollView setContentOffset:contentOffset animated:animated];
 }
@@ -195,13 +233,13 @@
     CGFloat index = (CGRectGetWidth(scrollView.bounds) > 0) ? (scrollView.contentOffset.x / CGRectGetWidth(scrollView.bounds)) : 0;
     [self.pagerStrip setCurrentIndex:index animated:NO];
     
-    if (!self.isRotatingInterfaceOrientation) {
+    if (!self.isRotatingInterfaceOrientation && !self.isLayouting) {
         if (self.viewControllers.count > 0) {
             NSUInteger currentIndex = roundf(index);
             currentIndex = ((currentIndex > 0) ? (currentIndex < (self.viewControllers.count - 1)) ? currentIndex : (self.viewControllers.count - 1) : 0);
             _currentViewController = [self.viewControllers objectAtIndex:currentIndex];
         } else {
-            _currentViewController = nil;
+            _currentViewController = [self.viewControllers firstObject];
         }
         
         [self hideViewControllersOutsideOfBounds];
@@ -251,10 +289,10 @@
 
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated {
     if (_currentViewController != currentViewController) {
-        _currentViewController = currentViewController;
+        _currentViewController = currentViewController ?: [self.viewControllers firstObject];
         
         if ([self isViewLoaded] && !self.callDidEndScrollingOnNextViewDidLayoutSubviews) {
-            [self scrollToViewController:self.currentViewController animated:animated];
+            [self scrollToCurrentViewControllerAnimated:animated];
             
             if (!animated) {
                 [self didEndScrolling];
