@@ -209,6 +209,17 @@
             offset += CGRectGetWidth([self.buttons[(nextButtonIndex-1)] bounds]) * (index - prevButtonIndex);
         }
         
+        // Center button
+        CGFloat width;
+        if (prevButtonIndex != nextButtonIndex) {
+            width =
+            CGRectGetWidth([self.buttons[nextButtonIndex] bounds]) * (index - prevButtonIndex) +
+            CGRectGetWidth([self.buttons[prevButtonIndex] bounds]) * (nextButtonIndex - index);
+        } else {
+            width = CGRectGetWidth([self.buttons[prevButtonIndex] bounds]);
+        }
+        offset -= ((CGRectGetWidth(self.scrollView.bounds) - width) * 0.5f);
+        
         offset = MIN(MAX(offset, 0), self.scrollView.contentSize.width - CGRectGetWidth(self.scrollView.bounds));
         [self.scrollView setContentOffset:CGPointMake(offset, self.scrollView.contentOffset.y) animated:NO];
         
