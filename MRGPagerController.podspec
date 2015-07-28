@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MRGPagerController'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'An highly customizable pager controller.'
   s.homepage         = 'https://github.com/Mirego/MRGPagerController'
   s.license          = 'BSD 3-Clause'
