@@ -116,16 +116,19 @@
 }
 
 - (void)layoutPager {
-    CGSize size = self.view.bounds.size;
+    CGSize size = CGSizeMake(CGRectGetWidth(self.view.bounds) - (self.padding.left + self.padding.right),
+                             CGRectGetHeight(self.view.bounds) - (self.padding.top + self.padding.bottom));
     
-    CGFloat pagerStripBottom = 0;
+    CGFloat pagerStripBottom;
     if (self.pagerStrip.superview == self.view) {
-        self.pagerStrip.frame = CGRectMake(0, 0, size.width, [self.pagerStrip sizeThatFits:self.view.bounds.size].height);
+        self.pagerStrip.frame = CGRectMake(self.padding.left, self.padding.top, size.width, [self.pagerStrip sizeThatFits:size].height);
         [self.pagerStrip layoutIfNeeded];
-        pagerStripBottom = CGRectGetMaxY(self.pagerStrip.bounds);
+        pagerStripBottom = CGRectGetMaxY(self.pagerStrip.frame);
+    } else {
+        pagerStripBottom = self.padding.top;
     }
     
-    self.pagerScrollView.frame = CGRectMake(0, pagerStripBottom, size.width, (size.height - pagerStripBottom));
+    self.pagerScrollView.frame = CGRectMake(self.padding.left, pagerStripBottom, size.width, ((size.height + self.padding.top) - pagerStripBottom));
     [self.pagerScrollView layoutIfNeeded];
     
     CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.pagerScrollView.bounds), CGRectGetHeight(self.pagerScrollView.bounds));
@@ -303,6 +306,14 @@
 
 - (void)setCurrentViewController:(UIViewController *)currentViewController {
     [self setCurrentViewController:currentViewController animated:NO];
+}
+
+- (void)setPadding:(UIEdgeInsets)padding {
+    _padding = padding;
+    
+    if ([self isViewLoaded]) {
+        [self.view setNeedsLayout];
+    }
 }
 
 #pragma mark - MRGPagerStripDelegate

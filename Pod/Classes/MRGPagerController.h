@@ -37,6 +37,7 @@
 @property (nonatomic, readonly) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, weak) UIViewController *currentViewController;
+@property (nonatomic) UIEdgeInsets padding;
 
 - (instancetype)init;
 
