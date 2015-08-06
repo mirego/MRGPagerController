@@ -194,7 +194,11 @@
     [removeViewControllers minusSet:[[NSSet alloc] initWithArray:newViewControllers]];
     for (UIViewController *viewController in removeViewControllers) {
         [viewController willMoveToParentViewController:nil];
-        [viewController.view removeFromSuperview];
+        if ([viewController.view superview] != nil) {
+            [viewController beginAppearanceTransition:NO animated:NO];
+            [viewController.view removeFromSuperview];
+            [viewController endAppearanceTransition];
+        }
         [viewController removeFromParentViewController];
     }
     
@@ -212,15 +216,36 @@
 }
 
 - (void)hideViewControllersOutsideOfBounds {
-    for (UIViewController *viewController in self.viewControllers) {
-        UIView *viewControllerView = viewController.view;
-        if (!CGRectIntersectsRect(viewControllerView.frame, self.pagerScrollView.bounds)) {
-            if ([viewControllerView superview] != nil) {
-                [viewControllerView removeFromSuperview];
+    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.pagerScrollView.bounds), CGRectGetHeight(self.pagerScrollView.bounds));
+    
+    if (frame.size.width > 0 && frame.size.height > 0) {
+        for (UIViewController *viewController in self.viewControllers) {
+            UIView *viewControllerView = viewController.view;
+            if (!CGRectIntersectsRect(frame, self.pagerScrollView.bounds)) {
+                if ([viewControllerView superview] != nil) {
+                    [viewController beginAppearanceTransition:NO animated:NO];
+                    [viewControllerView removeFromSuperview];
+                    [viewController endAppearanceTransition];
+                }
+                
+            } else {
+                if ([viewControllerView superview] == nil) {
+                    [viewController beginAppearanceTransition:YES animated:NO];
+                    [self.pagerScrollView addSubview:viewControllerView];
+                    [viewController endAppearanceTransition];
+                }
             }
-        } else {
-            if ([viewControllerView superview] == nil) {
-                [self.pagerScrollView addSubview:viewControllerView];
+            
+            frame.origin.x += frame.size.width;
+        }
+        
+    } else {
+        for (UIViewController *viewController in self.viewControllers) {
+            UIView *viewControllerView = viewController.view;
+            if ([viewControllerView superview] != nil) {
+                [viewController beginAppearanceTransition:NO animated:NO];
+                [viewControllerView removeFromSuperview];
+                [viewController endAppearanceTransition];
             }
         }
     }
