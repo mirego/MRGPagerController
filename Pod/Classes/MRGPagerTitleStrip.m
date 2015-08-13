@@ -198,7 +198,7 @@
     if ([self.buttons count] > 0 && (self.scrollView.contentSize.width > CGRectGetWidth(self.scrollView.bounds))) {
         CGFloat offset = 0;
         NSInteger prevButtonIndex = MAX(floorf(index), 0);
-        NSInteger nextButtonIndex = MIN(ceilf(index), [self.buttons count]);
+        NSInteger nextButtonIndex = MIN(ceilf(index), [self.buttons count] - 1);
         
         for (NSInteger ii = 0, count = MIN(prevButtonIndex, [self.buttons count]); ii < count; ++ii) {
             offset += CGRectGetWidth([self.buttons[ii] bounds]);
