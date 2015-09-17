@@ -33,12 +33,14 @@
 #import "MRGDemoTabStrip.h"
 
 @interface MRGViewController ()
+
 @property (nonatomic) MRGPagerController *pagerController;
 @end
 
 @implementation MRGViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.pagerController = [[MRGPagerController alloc] initWithPagerStripClass:[MRGDemoTabStrip class]];
@@ -68,6 +70,12 @@
 
     self.pagerController.viewControllers = tabs;
     self.pagerController.currentViewController = tabs[7];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

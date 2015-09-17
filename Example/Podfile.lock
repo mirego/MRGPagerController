@@ -1,5 +1,5 @@
 PODS:
-  - MRGPagerController (1.0.4)
+  - MRGPagerController (1.0.8)
 
 DEPENDENCIES:
   - MRGPagerController (from `../`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MRGPagerController: 7f91adef862268dc0a813b88ae164f6a482504a6
+  MRGPagerController: 31ec55556807b206e3ca1816da42af8291cec27d
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

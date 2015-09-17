@@ -1,7 +1,11 @@
-target 'MRGPagerController', :exclusive => true do
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'MRGPagerController_Example', :exclusive => true do
   pod "MRGPagerController", :path => "../"
 end
 
-target 'Tests', :exclusive => true do
+target 'MRGPagerController_Tests', :exclusive => true do
   pod "MRGPagerController", :path => "../"
+
+  
 end

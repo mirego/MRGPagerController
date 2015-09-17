@@ -29,13 +29,13 @@
 #import "MRGDemoController.h"
 
 @interface MRGDemoController ()
+
 @property (nonatomic, copy) NSString *labelText;
 @end
 
-@implementation MRGDemoController {
-}
+@implementation MRGDemoController
 
-- (id)initWithTitle:(NSString *)title text:(NSString *)text {
+- (instancetype)initWithTitle:(NSString *)title text:(NSString *)text {
     self = [super init];
     if (self) {
         self.title = title;

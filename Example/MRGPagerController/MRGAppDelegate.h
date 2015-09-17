@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015, Mirego
+// Copyright (c) 2014-2015, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -26,9 +26,9 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface MRGAppDelegate : UIResponder<UIApplicationDelegate>
+@interface MRGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

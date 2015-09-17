@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2015, Mirego
+// Copyright (c) 2015, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -26,25 +26,17 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+@import XCTest;
 
-@protocol MRGPagerStripDelegate;
-
-@protocol MRGPagerStrip <NSObject>
-
-@property (nonatomic, weak) id<MRGPagerStripDelegate> delegate;
-
-@property (nonatomic, copy) NSArray *viewControllers;
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
-
-@property (nonatomic) CGFloat currentIndex;
-- (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated;
+@interface Tests : XCTestCase
 
 @end
 
-@protocol MRGPagerStripDelegate <NSObject>
+@implementation Tests
 
-- (void)pagerStripSizeChanged:(id<MRGPagerStrip>)pagerStrip;
-- (void)pagerStrip:(id<MRGPagerStrip>)pagerStrip didSelectViewController:(UIViewController *)viewController;
+- (void)testExample
+{
+}
 
 @end
+
