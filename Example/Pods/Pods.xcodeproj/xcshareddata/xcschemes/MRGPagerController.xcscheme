@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "955E659356EEF37C59C6EC3C"
+               BlueprintIdentifier = "9C9A96DA4FD8D12CAF8F6CF3"
                BuildableName = "libMRGPagerController.a"
                BlueprintName = "MRGPagerController"
                ReferencedContainer = "container:Pods.xcodeproj">
