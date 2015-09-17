@@ -1,6 +1,6 @@
 # MRGPagerController
 
-[![CI Status](http://img.shields.io/travis/Mirego/MRGPagerController.svg?style=flat)](https://travis-ci.org/Mirego/MRGPagerController)
+[![CI Status](http://img.shields.io/travis/mirego/MRGPagerController.svg?style=flat)](https://travis-ci.org/Mirego/MRGPagerController)
 [![Version](https://img.shields.io/cocoapods/v/MRGPagerController.svg?style=flat)](http://cocoadocs.org/docsets/MRGPagerController)
 [![License](https://img.shields.io/cocoapods/l/MRGPagerController.svg?style=flat)](http://cocoadocs.org/docsets/MRGPagerController)
 [![Platform](https://img.shields.io/cocoapods/p/MRGPagerController.svg?style=flat)](http://cocoadocs.org/docsets/MRGPagerController)
