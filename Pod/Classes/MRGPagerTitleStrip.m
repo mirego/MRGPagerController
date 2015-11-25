@@ -62,7 +62,6 @@
         
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.scrollsToTop = NO;
-        _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         [self addSubview:_scrollView];
@@ -126,9 +125,6 @@
     }
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-}
-
 - (void)layoutSubviews {
     [self updateViewIfNeeded];
     [super layoutSubviews];
@@ -169,6 +165,9 @@
     
     self.scrollView.frame = self.bounds;
     self.scrollView.contentSize = CGSizeMake(((buttonLeft > 0.0f) ? (buttonLeft + separatorSize.width) : 0.0f), size.height);
+    
+    [self.scrollView layoutIfNeeded];
+    [self scrollToIndex:self.currentIndex animated:NO];
     
     [self.delegate pagerStripSizeChanged:self];
 }

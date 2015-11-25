@@ -28,7 +28,7 @@
 
 #import "MRGPagerTabStrip.h"
 
-@interface MRGPagerTabStrip ()
+@interface MRGPagerTabStrip () <UIScrollViewDelegate>
 @property (nonatomic) UIView *tabIndicatorView;
 @end
 
@@ -38,6 +38,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        NSParameterAssert(self.scrollView.delegate == nil);
+        self.scrollView.delegate = self;
+        
         _drawFullUnderline = YES;
         _tabIndicatorColor = [UIColor whiteColor];
     }
@@ -97,7 +100,6 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [super scrollViewDidScroll:scrollView];
     [self updateTabIndicatorAnimated:NO];
 }
 

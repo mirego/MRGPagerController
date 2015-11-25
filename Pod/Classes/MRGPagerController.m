@@ -32,7 +32,6 @@
 @property (nonatomic) Class pagerStripClass;
 @property (nonatomic) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic) UIScrollView *pagerScrollView;
-@property (nonatomic) BOOL isRotatingInterfaceOrientation;
 @property (nonatomic) BOOL isLayouting;
 @property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
 @property (nonatomic, weak) UIViewController *lastViewControllerEndedScrollingOn;
@@ -91,8 +90,8 @@
 #pragma mark - layout
 
 - (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
     self.isLayouting = YES;
+    [super viewWillLayoutSubviews];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -142,7 +141,6 @@
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    self.isRotatingInterfaceOrientation = YES;
     
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
@@ -153,7 +151,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    self.isRotatingInterfaceOrientation = NO;
     
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
@@ -164,7 +161,6 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    [self scrollToCurrentViewControllerAnimated:NO];
     
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
@@ -261,7 +257,7 @@
     CGFloat index = (CGRectGetWidth(scrollView.bounds) > 0) ? (scrollView.contentOffset.x / CGRectGetWidth(scrollView.bounds)) : 0;
     [self.pagerStrip setCurrentIndex:index animated:NO];
     
-    if (!self.isRotatingInterfaceOrientation && !self.isLayouting) {
+    if (!self.isLayouting) {
         if (self.viewControllers.count > 0) {
             NSUInteger currentIndex = roundf(index);
             currentIndex = ((currentIndex > 0) ? (currentIndex < (self.viewControllers.count - 1)) ? currentIndex : (self.viewControllers.count - 1) : 0);

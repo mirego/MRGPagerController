@@ -29,7 +29,7 @@
 #import <UIKit/UIKit.h>
 #import "MRGPagerStrip.h"
 
-@interface MRGPagerTitleStrip : UIView <MRGPagerStrip, UIScrollViewDelegate>
+@interface MRGPagerTitleStrip : UIView <MRGPagerStrip>
 
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, readonly) NSMutableArray *buttons;
