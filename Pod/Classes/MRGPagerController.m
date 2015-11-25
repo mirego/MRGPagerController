@@ -77,9 +77,11 @@
     }
     
     self.pagerScrollView = [[UIScrollView alloc] init];
-    self.pagerScrollView.scrollsToTop = NO;
     self.pagerScrollView.delegate = self;
+#if !TARGET_OS_TV
+    self.pagerScrollView.scrollsToTop = NO;
     self.pagerScrollView.pagingEnabled = YES;
+#endif
     self.pagerScrollView.showsHorizontalScrollIndicator = NO;
     self.pagerScrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.pagerScrollView];

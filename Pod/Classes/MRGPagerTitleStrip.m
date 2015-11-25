@@ -61,7 +61,9 @@
         _separatorColor = [UIColor colorWithWhite:1 alpha:0.2f];
         
         _scrollView = [[UIScrollView alloc] init];
+#if !TARGET_OS_TV
         _scrollView.scrollsToTop = NO;
+#endif
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         [self addSubview:_scrollView];

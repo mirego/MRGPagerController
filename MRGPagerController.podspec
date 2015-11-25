@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MRGPagerController'
-  s.version          = '1.0.8'
+  s.version          = '1.0.9'
   s.summary          = 'An highly customizable pager controller.'
   s.homepage         = 'https://github.com/Mirego/MRGPagerController'
   s.license          = 'BSD 3-Clause'
@@ -8,8 +8,9 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/Mirego/MRGPagerController.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/Mirego'
 
-  s.platform         = :ios, '7.0'
   s.requires_arc     = true
-
   s.source_files     = 'Pod/Classes'
+
+  s.ios.deployment_target = '7.0'
+  s.tvos.deployment_target = '9.0'
 end

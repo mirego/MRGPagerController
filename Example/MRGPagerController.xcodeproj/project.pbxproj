@@ -215,6 +215,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				C72539E39B7F40DC64B24B6C /* Copy Pods Resources */,
+				F628742A706A4AB69307DE79 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +235,7 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				066DD0FAF16D9ECEC3995887 /* Copy Pods Resources */,
+				51AE364A9B66EF163B515DCF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,7 +255,7 @@
 			attributes = {
 				CLASSPREFIX = MRG;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Mirego";
+				ORGANIZATIONNAME = Mirego;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -331,6 +333,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		51AE364A9B66EF163B515DCF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		967368FFFC4FD310BD8E274C /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +376,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F628742A706A4AB69307DE79 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
