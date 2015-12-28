@@ -38,12 +38,11 @@
 
 @implementation MRGPagerTitleStrip
 
-@synthesize viewControllers = _viewControllers;
+@synthesize pageTitles = _pageTitles;
 @synthesize currentIndex = _currentIndex;
 @synthesize delegate = _delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blackColor];
@@ -182,9 +181,9 @@
     [self.buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.buttons removeAllObjects];
     
-    for (UIViewController *viewController in self.viewControllers) {
+    for (NSString *title in self.pageTitles) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:viewController.title forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateNormal];
         [self.scrollView addSubview:button];
         [self.buttons addObject:button];
     }
@@ -238,17 +237,17 @@
 
 #pragma mark - get/set
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
-    if (_viewControllers != viewControllers) {
-        _viewControllers = [viewControllers copy];
+- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated {
+    if (_pageTitles != pageTitles) {
+        _pageTitles = [pageTitles copy];
         
         [self updateButtonsAnimated:animated];
         [self setNeedsUpdateView];
     }
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers {
-    [self setViewControllers:viewControllers animated:NO];
+- (void)setPageTitles:(NSArray *)pageTitles {
+    [self setPageTitles:pageTitles animated:NO];
 }
 
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated {
@@ -257,10 +256,6 @@
         
         [self scrollToIndex:self.currentIndex animated:YES];
     }
-}
-
-- (void)setCurrentViewControllerIndex:(CGFloat)index {
-    [self setCurrentIndex:index animated:NO];
 }
 
 - (void)setTitleTextAlignment:(NSTextAlignment)titleTextAlignment {

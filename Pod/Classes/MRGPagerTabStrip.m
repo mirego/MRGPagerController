@@ -34,8 +34,7 @@
 
 @implementation MRGPagerTabStrip
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         NSParameterAssert(self.scrollView.delegate == nil);
@@ -110,8 +109,8 @@
 
 #pragma mark - get/set
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
-    [super setViewControllers:viewControllers animated:animated];
+- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated {
+    [super setPageTitles:pageTitles animated:animated];
     
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
         [button setTag:index];
@@ -133,8 +132,8 @@
 
 - (void)buttonTapped:(UIButton *)button {
     NSUInteger index = button.tag;
-    if (index < self.viewControllers.count) {
-        [self.delegate pagerStrip:self didSelectViewController:[self.viewControllers objectAtIndex:index]];
+    if (index < self.pageTitles.count) {
+        [self.delegate pagerStrip:self didSelectPageAtIndex:index];
     }
 }
 

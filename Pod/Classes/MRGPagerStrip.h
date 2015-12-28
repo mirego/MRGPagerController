@@ -34,8 +34,8 @@
 
 @property (nonatomic, weak) id<MRGPagerStripDelegate> delegate;
 
-@property (nonatomic, copy) NSArray *viewControllers;
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
+@property (nonatomic, copy) NSArray *pageTitles;
+- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated;
 
 @property (nonatomic) CGFloat currentIndex;
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated;
@@ -45,6 +45,6 @@
 @protocol MRGPagerStripDelegate <NSObject>
 
 - (void)pagerStripSizeChanged:(id<MRGPagerStrip>)pagerStrip;
-- (void)pagerStrip:(id<MRGPagerStrip>)pagerStrip didSelectViewController:(UIViewController *)viewController;
+- (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSUInteger)pageIndex;
 
 @end
