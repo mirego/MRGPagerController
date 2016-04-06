@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EA607C5DA9A8DB5BFF3EBDF0'
-               BlueprintName = 'MRGPagerController'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMRGPagerController.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "66F1C21F1E93A364A7427FB739D1D1A7"
+               BlueprintName = "MRGPagerController"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libMRGPagerController.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

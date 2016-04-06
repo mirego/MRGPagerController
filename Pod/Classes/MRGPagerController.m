@@ -72,7 +72,7 @@
     if (self.pagerStrip) {
         [self.view addSubview:self.pagerStrip];
         self.pagerStrip.delegate = self;
-        self.pagerStrip.viewControllers = self.viewControllers;
+        self.pagerStrip.pageTitles = [self getPageTitles];
         [self.view addSubview:self.pagerStrip];
     }
     
@@ -299,8 +299,8 @@
     if (_viewControllers != viewControllers) {
         NSArray *oldViewControllers = self.viewControllers;
         _viewControllers = [viewControllers copy];
-        
-        [self.pagerStrip setViewControllers:self.viewControllers animated:animated];
+
+        [self.pagerStrip setPageTitles:[self getPageTitles] animated:animated];
         [self updateViewControllersWithOldViewControllers:oldViewControllers newViewControllers:self.viewControllers animated:animated];
         
         if ((self.pagerScrollView != nil)) {
@@ -339,14 +339,23 @@
     }
 }
 
+- (NSArray *)getPageTitles {
+    NSMutableArray *titles = [NSMutableArray arrayWithCapacity:self.viewControllers.count];
+    for (UIViewController *viewController in self.viewControllers) {
+        [titles addObject:viewController.title];
+    }
+    return titles;
+}
+
 #pragma mark - MRGPagerStripDelegate
 
 - (void)pagerStripSizeChanged:(id<MRGPagerStrip>)pagerStrip {
     [self.view setNeedsLayout];
 }
 
-- (void)pagerStrip:(id<MRGPagerStrip>)pagerStrip didSelectViewController:(UIViewController *)viewController {
-    [self setCurrentViewController:viewController animated:YES];
+- (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSInteger)pageIndex
+{
+    [self setCurrentViewController:self.viewControllers[pageIndex] animated:YES];
 }
 
 @end
