@@ -32,5 +32,6 @@
 
 @property (nonatomic) BOOL drawFullUnderline;
 @property (nonatomic) UIColor *tabIndicatorColor;
+@property (nonatomic) UIColor *tabHighlightedBackgroundColor; //Defaults to tabIndicatorColor if nil
 
 @end
