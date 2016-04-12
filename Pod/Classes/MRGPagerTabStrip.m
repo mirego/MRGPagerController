@@ -112,16 +112,18 @@
 - (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated {
     [super setPageTitles:pageTitles animated:animated];
     
+    UIColor *highlightedColor = self.tabHighlightedBackgroundColor ? self.tabHighlightedBackgroundColor : self.tabIndicatorColor;
+    
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
         [button setTag:index];
-        [button setBackgroundImage:[self backgroundImageWithColor:self.tabIndicatorColor] forState:UIControlStateNormal|UIControlStateHighlighted];
+        [button setBackgroundImage:[self backgroundImageWithColor:highlightedColor] forState:UIControlStateNormal|UIControlStateHighlighted];
         [button setBackgroundImage:[button backgroundImageForState:UIControlStateNormal|UIControlStateHighlighted] forState:UIControlStateSelected|UIControlStateHighlighted];
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }];
 }
 
 - (UIImage *)backgroundImageWithColor:(UIColor *)color {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1, 1), YES, 0.0f);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(1, 1), NO, 0.0f);
     CGContextRef currentContext = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(currentContext, [color CGColor]);
     CGContextFillRect(currentContext, CGRectMake(0, 0, 1, 1));
