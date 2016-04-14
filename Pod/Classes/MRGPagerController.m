@@ -34,6 +34,7 @@
 @property (nonatomic) UIScrollView *pagerScrollView;
 @property (nonatomic) BOOL isLayouting;
 @property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
+@property (nonatomic) CGSize lastSize;
 @property (nonatomic, weak) UIViewController *lastViewControllerEndedScrollingOn;
 @end
 
@@ -99,6 +100,16 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
+    if (!CGSizeEqualToSize(self.lastSize, self.view.bounds.size)) {
+        [self layoutViewControllers];
+    }
+    
+    self.isLayouting = NO;
+}
+
+- (void)layoutViewControllers {
+    self.lastSize = self.view.bounds.size;
+    
     [self layoutPager];
     
     if (_currentViewController == nil) {
@@ -112,8 +123,6 @@
         self.callDidEndScrollingOnNextViewDidLayoutSubviews = NO;
         [self didEndScrolling];
     }
-    
-    self.isLayouting = NO;
 }
 
 - (void)layoutPager {
@@ -306,6 +315,8 @@
         if ((self.pagerScrollView != nil)) {
             [self scrollViewDidScroll:self.pagerScrollView];
         }
+        
+        [self layoutViewControllers];
     }
 }
 
