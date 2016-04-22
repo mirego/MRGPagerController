@@ -41,6 +41,7 @@
         self.scrollView.delegate = self;
         
         _drawFullUnderline = YES;
+        _tabIndicatorHeight = 2;
         _tabIndicatorColor = [UIColor whiteColor];
     }
     return self;
@@ -70,7 +71,7 @@
     }
     
     if (self.buttons.count == 0) {
-        self.tabIndicatorView.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - 2, 0, 2);
+        self.tabIndicatorView.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - self.tabIndicatorHeight, 0, self.tabIndicatorHeight);
         return;
     }
     
@@ -95,7 +96,7 @@
     width = CGRectGetWidth([[self.buttons objectAtIndex:currentIndex] bounds]);
     width = (width * (1.0f - progress)) + (nextWidth * progress);
     
-    self.tabIndicatorView.frame = CGRectMake(left, CGRectGetHeight(self.bounds) - 2, width, 2);
+    self.tabIndicatorView.frame = CGRectMake(left, CGRectGetHeight(self.bounds) - self.tabIndicatorHeight, width, self.tabIndicatorHeight);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -120,6 +121,8 @@
         [button setBackgroundImage:[button backgroundImageForState:UIControlStateNormal|UIControlStateHighlighted] forState:UIControlStateSelected|UIControlStateHighlighted];
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }];
+    
+    [self.scrollView bringSubviewToFront:self.tabIndicatorView];
 }
 
 - (UIImage *)backgroundImageWithColor:(UIColor *)color {

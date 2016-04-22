@@ -31,6 +31,7 @@
 @interface MRGPagerTabStrip : MRGPagerTitleStrip
 
 @property (nonatomic) BOOL drawFullUnderline;
+@property (nonatomic) CGFloat tabIndicatorHeight;
 @property (nonatomic) UIColor *tabIndicatorColor;
 @property (nonatomic) UIColor *tabHighlightedBackgroundColor; //Defaults to tabIndicatorColor if nil
 
