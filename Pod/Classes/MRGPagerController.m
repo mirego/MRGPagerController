@@ -53,6 +53,8 @@
     if (self) {
         _pagerStripClass = pagerStripClass;
         _callDidEndScrollingOnNextViewDidLayoutSubviews = YES;
+        _allowSwipeGestures = YES;
+        _animatePageChanges = YES;
     }
     
     return self;
@@ -62,6 +64,11 @@
     _pagerStrip.delegate = nil;
     _pagerScrollView.delegate = nil;
     _delegate = nil;
+}
+
+- (void)setAllowSwipeGestures:(BOOL)allowSwipeGestures {
+    _allowSwipeGestures = allowSwipeGestures;
+    self.pagerScrollView.scrollEnabled = allowSwipeGestures;
 }
 
 #pragma mark - lifecyle
@@ -79,6 +86,7 @@
     
     self.pagerScrollView = [[UIScrollView alloc] init];
     self.pagerScrollView.delegate = self;
+    self.pagerScrollView.scrollEnabled = self.allowSwipeGestures;
 #if !TARGET_OS_TV
     self.pagerScrollView.scrollsToTop = NO;
     self.pagerScrollView.pagingEnabled = YES;
@@ -366,7 +374,7 @@
 
 - (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSInteger)pageIndex
 {
-    [self setCurrentViewController:self.viewControllers[pageIndex] animated:YES];
+    [self setCurrentViewController:self.viewControllers[pageIndex] animated:self.animatePageChanges];
 }
 
 @end
