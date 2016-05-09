@@ -38,6 +38,8 @@
 @property (nonatomic, copy) NSArray *viewControllers;
 @property (nonatomic, weak) UIViewController *currentViewController;
 @property (nonatomic) UIEdgeInsets padding;
+@property (nonatomic) BOOL allowSwipeGestures;
+@property (nonatomic) BOOL animatePageChanges;
 
 - (instancetype)init;
 
