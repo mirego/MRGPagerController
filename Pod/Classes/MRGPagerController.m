@@ -364,8 +364,7 @@
     [self.view setNeedsLayout];
 }
 
-- (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSInteger)pageIndex
-{
+- (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSUInteger)pageIndex {
     [self setCurrentViewController:self.viewControllers[pageIndex] animated:YES];
 }
 
