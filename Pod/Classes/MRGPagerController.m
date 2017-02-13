@@ -181,15 +181,30 @@
 }
 
 #ifdef __IPHONE_8_0
+
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
+    
+    BOOL sizeChanged = !CGSizeEqualToSize(self.view.bounds.size, size);
+    if (sizeChanged) {
+        
+        [self.view setNeedsLayout];
+        [self.view layoutIfNeeded];
+        
+        [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+            [self.view setNeedsLayout];
+            [self.view layoutIfNeeded];
+            
+        } completion:NULL];
+    }
+    
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
         if ((viewController != self.currentViewController)) {
             [viewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
         }
     }];
 }
+
 #endif
 
 - (void)updateViewControllersWithOldViewControllers:(NSArray *)oldViewControllers newViewControllers:(NSArray *)newViewControllers animated:(BOOL)animated {
