@@ -117,8 +117,13 @@
     
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
         [button setTag:index];
-        [button setBackgroundImage:[self backgroundImageWithColor:highlightedColor] forState:UIControlStateNormal|UIControlStateHighlighted];
-        [button setBackgroundImage:[button backgroundImageForState:UIControlStateNormal|UIControlStateHighlighted] forState:UIControlStateSelected|UIControlStateHighlighted];
+        UIImage *highlightedImage = [self backgroundImageWithColor:highlightedColor];
+        [button setBackgroundImage:highlightedImage forState:UIControlStateNormal|UIControlStateHighlighted];
+        [button setBackgroundImage:highlightedImage forState:UIControlStateSelected|UIControlStateHighlighted];
+        if (self.tabSelectedBackgroundColor) {
+            UIImage *selectedImage = [self backgroundImageWithColor:selectedColor];
+            [button setBackgroundImage:selectedImage forState:UIControlStateSelected];
+        }
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     }];
     
