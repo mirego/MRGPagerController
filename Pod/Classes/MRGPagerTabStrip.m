@@ -121,7 +121,7 @@
         [button setBackgroundImage:highlightedImage forState:UIControlStateNormal|UIControlStateHighlighted];
         [button setBackgroundImage:highlightedImage forState:UIControlStateSelected|UIControlStateHighlighted];
         if (self.tabSelectedBackgroundColor) {
-            UIImage *selectedImage = [self backgroundImageWithColor:selectedColor];
+            UIImage *selectedImage = [self backgroundImageWithColor:self.tabSelectedBackgroundColor];
             [button setBackgroundImage:selectedImage forState:UIControlStateSelected];
         }
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
