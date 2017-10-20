@@ -34,5 +34,6 @@
 @property (nonatomic) CGFloat tabIndicatorHeight;
 @property (nonatomic) UIColor *tabIndicatorColor;
 @property (nonatomic) UIColor *tabHighlightedBackgroundColor; //Defaults to tabIndicatorColor if nil
+@property (nonatomic) UIColor *tabSelectedBackgroundColor;
 
 @end
