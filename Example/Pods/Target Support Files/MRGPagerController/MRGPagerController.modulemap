@@ -1,0 +1,6 @@
+framework module MRGPagerController {
+  umbrella header "MRGPagerController-umbrella.h"
+
+  export *
+  module * { export * }
+}

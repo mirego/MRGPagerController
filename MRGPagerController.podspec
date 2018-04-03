@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'MRGPagerController'
-  s.version          = '1.0.14'
+  s.version          = '1.1'
   s.summary          = 'An highly customizable pager controller.'
   s.homepage         = 'https://github.com/Mirego/MRGPagerController'
   s.license          = 'BSD 3-Clause'
@@ -11,6 +11,5 @@ Pod::Spec.new do |s|
   s.requires_arc     = true
   s.source_files     = 'Pod/Classes'
 
-  s.ios.deployment_target = '7.0'
-  s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
 end

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -32,8 +32,8 @@
 @property (nonatomic, readonly) BOOL needsUpdateView;
 @property (nonatomic, readonly) BOOL needsUpdateSeparators;
 @property (nonatomic) UIScrollView *scrollView;
-@property (nonatomic) NSMutableArray *buttons;
-@property (nonatomic) NSMutableArray *separators;
+@property (nonatomic) NSMutableArray<UIButton *> *buttons;
+@property (nonatomic) NSMutableArray<UIView *> *separators;
 @end
 
 @implementation MRGPagerTitleStrip
@@ -60,9 +60,7 @@
         _separatorColor = [UIColor colorWithWhite:1 alpha:0.2f];
         
         _scrollView = [[UIScrollView alloc] init];
-#if !TARGET_OS_TV
         _scrollView.scrollsToTop = NO;
-#endif
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         [self addSubview:_scrollView];
@@ -132,8 +130,8 @@
     
     CGSize size = self.bounds.size;
     CGSize separatorSize = (self.drawSeparator ? CGSizeMake(self.separatorSize.width, self.separatorSize.height * size.height) : CGSizeZero);
-
-    NSMutableArray *buttonsWidths = [[NSMutableArray alloc] initWithCapacity:self.buttons.count];
+    
+    NSMutableArray<NSNumber *> *buttonsWidths = [[NSMutableArray alloc] initWithCapacity:self.buttons.count];
     __block CGFloat buttonsWidth = 0;
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
         CGFloat width = ((self.titleForcedWidth > 0) ? self.titleForcedWidth : [button sizeThatFits:CGSizeZero].width) + self.titleTextSpacing * 2;
@@ -237,7 +235,7 @@
 
 #pragma mark - get/set
 
-- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated {
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated {
     if (_pageTitles != pageTitles) {
         _pageTitles = [pageTitles copy];
         
@@ -246,7 +244,7 @@
     }
 }
 
-- (void)setPageTitles:(NSArray *)pageTitles {
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles {
     [self setPageTitles:pageTitles animated:NO];
 }
 

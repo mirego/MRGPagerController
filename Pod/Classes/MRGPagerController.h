@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -31,24 +31,29 @@
 
 @protocol MRGPagerControllerDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MRGPagerController : UIViewController
 
-@property (nonatomic, weak) id<MRGPagerControllerDelegate> delegate;
-@property (nonatomic, readonly) UIView<MRGPagerStrip> *pagerStrip;
-@property (nonatomic, copy) NSArray *viewControllers;
-@property (nonatomic, weak) UIViewController *currentViewController;
+@property (nonatomic, weak, nullable) id<MRGPagerControllerDelegate> delegate;
+@property (nonatomic, readonly, nullable) UIView<MRGPagerStrip> *pagerStrip;
+@property (nonatomic, copy, nullable) NSArray<UIViewController *> *viewControllers;
+@property (nonatomic, weak, nullable) UIViewController *currentViewController;
 @property (nonatomic) UIEdgeInsets padding;
 
 - (instancetype)init;
+- (instancetype)initWithPagerStripClass:(nullable Class)pagerStripClass;
 
-- (instancetype)initWithPagerStripClass:(Class)pagerStripClass;
-
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated;
 
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated;
 
 @end
 
 @protocol MRGPagerControllerDelegate<NSObject>
+
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
+
 @end
+
+NS_ASSUME_NONNULL_END

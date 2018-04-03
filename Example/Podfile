@@ -1,11 +1,10 @@
-source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
 
-target 'MRGPagerController_Example', :exclusive => true do
-  pod "MRGPagerController", :path => "../"
-end
+target 'MRGPagerController_Example' do
+  pod 'MRGPagerController', :path => '../'
 
-target 'MRGPagerController_Tests', :exclusive => true do
-  pod "MRGPagerController", :path => "../"
-
-  
+  target 'MRGPagerController_Tests' do
+    inherit! :search_paths
+  end
 end

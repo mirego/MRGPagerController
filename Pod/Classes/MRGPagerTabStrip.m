@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -29,6 +29,7 @@
 #import "MRGPagerTabStrip.h"
 
 @interface MRGPagerTabStrip () <UIScrollViewDelegate>
+
 @property (nonatomic) UIView *tabIndicatorView;
 @end
 
@@ -44,6 +45,7 @@
         _tabIndicatorHeight = 2;
         _tabIndicatorColor = [UIColor whiteColor];
     }
+    
     return self;
 }
 
@@ -89,7 +91,7 @@
         width -= separatorWidth;
         nextWidth = CGRectGetWidth([[self.buttons objectAtIndex:(currentIndex+1)] bounds]);
     }
-
+    
     CGFloat progress = ((self.currentIndex > 0) ? ((self.currentIndex < (self.buttons.count-1)) ? (self.currentIndex - floorf(self.currentIndex)) : 0.0f) : 0.0f);
     left += (width * progress);
     
@@ -110,7 +112,7 @@
 
 #pragma mark - get/set
 
-- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated {
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated {
     [super setPageTitles:pageTitles animated:animated];
     
     UIColor *highlightedColor = self.tabHighlightedBackgroundColor ? self.tabHighlightedBackgroundColor : self.tabIndicatorColor;

@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -29,13 +29,14 @@
 #import "MRGPagerController.h"
 
 @interface MRGPagerController ()<UIScrollViewDelegate, MRGPagerStripDelegate>
-@property (nonatomic) Class pagerStripClass;
+
+@property (nonatomic, nullable) Class pagerStripClass;
 @property (nonatomic) UIView<MRGPagerStrip> *pagerStrip;
 @property (nonatomic) UIScrollView *pagerScrollView;
 @property (nonatomic) BOOL isLayouting;
 @property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
 @property (nonatomic) CGSize lastSize;
-@property (nonatomic, weak) UIViewController *lastViewControllerEndedScrollingOn;
+@property (nonatomic, weak, nullable) UIViewController *lastViewControllerEndedScrollingOn;
 @end
 
 @implementation MRGPagerController
@@ -79,10 +80,8 @@
     
     self.pagerScrollView = [[UIScrollView alloc] init];
     self.pagerScrollView.delegate = self;
-#if !TARGET_OS_TV
     self.pagerScrollView.scrollsToTop = NO;
     self.pagerScrollView.pagingEnabled = YES;
-#endif
     self.pagerScrollView.showsHorizontalScrollIndicator = NO;
     self.pagerScrollView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.pagerScrollView];
@@ -150,6 +149,9 @@
     self.pagerScrollView.contentSize = CGSizeMake(frame.origin.x, CGRectGetHeight(self.pagerScrollView.bounds));
 }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-implementations"
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
@@ -180,6 +182,8 @@
     }];
 }
 
+#pragma GCC diagnostic pop
+
 #ifdef __IPHONE_8_0
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -207,12 +211,12 @@
 
 #endif
 
-- (void)updateViewControllersWithOldViewControllers:(NSArray *)oldViewControllers newViewControllers:(NSArray *)newViewControllers animated:(BOOL)animated {
+- (void)updateViewControllersWithOldViewControllers:(NSArray<UIViewController *> *)oldViewControllers newViewControllers:(NSArray<UIViewController *> *)newViewControllers animated:(BOOL)animated {
     if ([self isViewLoaded] == NO) {
         return;
     }
     
-    NSMutableOrderedSet *removeViewControllers = [[NSMutableOrderedSet alloc] initWithArray:oldViewControllers];
+    NSMutableOrderedSet<UIViewController *> *removeViewControllers = [[NSMutableOrderedSet alloc] initWithArray:oldViewControllers];
     [removeViewControllers minusSet:[[NSSet alloc] initWithArray:newViewControllers]];
     for (UIViewController *viewController in removeViewControllers) {
         [viewController willMoveToParentViewController:nil];
@@ -224,7 +228,7 @@
         [viewController removeFromParentViewController];
     }
     
-    NSMutableOrderedSet *addViewControllers = [[NSMutableOrderedSet alloc] initWithArray:newViewControllers];
+    NSMutableOrderedSet<UIViewController *> *addViewControllers = [[NSMutableOrderedSet alloc] initWithArray:newViewControllers];
     [addViewControllers minusSet:[[NSSet alloc] initWithArray:oldViewControllers]];
     for (UIViewController *viewController in addViewControllers) {
         [self addChildViewController:viewController];
@@ -319,11 +323,11 @@
 
 #pragma mark - get/set
 
-- (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated {
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated {
     if (_viewControllers != viewControllers) {
-        NSArray *oldViewControllers = self.viewControllers;
+        NSArray<UIViewController *> *oldViewControllers = self.viewControllers;
         _viewControllers = [viewControllers copy];
-
+        
         [self.pagerStrip setPageTitles:[self getPageTitles] animated:animated];
         [self updateViewControllersWithOldViewControllers:oldViewControllers newViewControllers:self.viewControllers animated:animated];
         
@@ -335,7 +339,7 @@
     }
 }
 
-- (void)setViewControllers:(NSArray *)viewControllers {
+- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
     [self setViewControllers:viewControllers animated:NO];
 }
 
@@ -365,8 +369,8 @@
     }
 }
 
-- (NSArray *)getPageTitles {
-    NSMutableArray *titles = [NSMutableArray arrayWithCapacity:self.viewControllers.count];
+- (NSArray<NSString *> *)getPageTitles {
+    NSMutableArray<NSString *> *titles = [NSMutableArray arrayWithCapacity:self.viewControllers.count];
     for (UIViewController *viewController in self.viewControllers) {
         [titles addObject:viewController.title];
     }

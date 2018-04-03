@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F67171D090AF75272AFECE3 /* Pods_MRGPagerController_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827571FA27ABA81B23AB7FAC /* Pods_MRGPagerController_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,10 +22,10 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		A0F213DD705C66E581F121FA /* Pods_MRGPagerController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13C1D86F213898CADB640C2 /* Pods_MRGPagerController_Example.framework */; };
 		A66FA2E41BAB49E10030191E /* MRGDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FA2E11BAB49E10030191E /* MRGDemoController.m */; };
 		A66FA2E51BAB49E10030191E /* MRGDemoTabStrip.m in Sources */ = {isa = PBXBuildFile; fileRef = A66FA2E31BAB49E10030191E /* MRGDemoTabStrip.m */; };
-		B4835D56EB6FB3ECF4DE7116 /* libPods-MRGPagerController_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F292957C357835A2FF3D49 /* libPods-MRGPagerController_Example.a */; };
-		C04A347E95DA101BF8C561D6 /* libPods-MRGPagerController_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EAAC1BBB1D9E90A52376BB7 /* libPods-MRGPagerController_Tests.a */; };
+		A6DF3B4D2074179F0020AC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6DF3B4C2074179F0020AC77 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E2707089FA096CF96E7507B /* Pods-MRGPagerController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		1EAAC1BBB1D9E90A52376BB7 /* libPods-MRGPagerController_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3201AC9BCE7F878B33788051 /* Pods-MRGPagerController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3209C709C272C9AF5F7177FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		37E79EC0D5119B0F7D05B64C /* Pods-MRGPagerController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		53F292957C357835A2FF3D49 /* libPods-MRGPagerController_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGPagerController_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* MRGPagerController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRGPagerController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,15 +60,19 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		65000E4D79F7824E9EF0FAFE /* MRGPagerController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRGPagerController.podspec; path = ../MRGPagerController.podspec; sourceTree = "<group>"; };
+		65000E4D79F7824E9EF0FAFE /* MRGPagerController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MRGPagerController.podspec; path = ../MRGPagerController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		80D98C6449B4B43DD92CB20B /* Pods-MRGPagerController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		827571FA27ABA81B23AB7FAC /* Pods_MRGPagerController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRGPagerController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		9DAA98961F28061DEF953FDC /* Pods-MRGPagerController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A13C1D86F213898CADB640C2 /* Pods_MRGPagerController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRGPagerController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A66FA2E01BAB49E10030191E /* MRGDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGDemoController.h; sourceTree = "<group>"; };
 		A66FA2E11BAB49E10030191E /* MRGDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGDemoController.m; sourceTree = "<group>"; };
 		A66FA2E21BAB49E10030191E /* MRGDemoTabStrip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGDemoTabStrip.h; sourceTree = "<group>"; };
 		A66FA2E31BAB49E10030191E /* MRGDemoTabStrip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGDemoTabStrip.m; sourceTree = "<group>"; };
+		A6DF3B4C2074179F0020AC77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D28AB28A0A80C5563F1F5BE1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EA0B7B6F27F27242F35D99B2 /* Pods-MRGPagerController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E1532D89AEB2A60D4E8C4C96 /* Pods-MRGPagerController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example.release.xcconfig"; sourceTree = "<group>"; };
+		E8CABBF9F2BE3DB70BE630E0 /* Pods-MRGPagerController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGPagerController_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +83,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				B4835D56EB6FB3ECF4DE7116 /* libPods-MRGPagerController_Example.a in Frameworks */,
+				A0F213DD705C66E581F121FA /* Pods_MRGPagerController_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,20 +94,20 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				C04A347E95DA101BF8C561D6 /* libPods-MRGPagerController_Tests.a in Frameworks */,
+				2F67171D090AF75272AFECE3 /* Pods_MRGPagerController_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44A36B306BE6F80CFFAE09A5 /* Pods */ = {
+		02EBFDC5C446D3AE82C1755E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37E79EC0D5119B0F7D05B64C /* Pods-MRGPagerController_Example.debug.xcconfig */,
-				9DAA98961F28061DEF953FDC /* Pods-MRGPagerController_Example.release.xcconfig */,
-				0E2707089FA096CF96E7507B /* Pods-MRGPagerController_Tests.debug.xcconfig */,
-				EA0B7B6F27F27242F35D99B2 /* Pods-MRGPagerController_Tests.release.xcconfig */,
+				80D98C6449B4B43DD92CB20B /* Pods-MRGPagerController_Example.debug.xcconfig */,
+				E1532D89AEB2A60D4E8C4C96 /* Pods-MRGPagerController_Example.release.xcconfig */,
+				3201AC9BCE7F878B33788051 /* Pods-MRGPagerController_Tests.debug.xcconfig */,
+				E8CABBF9F2BE3DB70BE630E0 /* Pods-MRGPagerController_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -118,7 +120,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				44A36B306BE6F80CFFAE09A5 /* Pods */,
+				02EBFDC5C446D3AE82C1755E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,8 +140,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				53F292957C357835A2FF3D49 /* libPods-MRGPagerController_Example.a */,
-				1EAAC1BBB1D9E90A52376BB7 /* libPods-MRGPagerController_Tests.a */,
+				A13C1D86F213898CADB640C2 /* Pods_MRGPagerController_Example.framework */,
+				827571FA27ABA81B23AB7FAC /* Pods_MRGPagerController_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +149,9 @@
 		6003F593195388D20070C39A /* Example for MRGPagerController */ = {
 			isa = PBXGroup;
 			children = (
+				6003F5A8195388D20070C39A /* Images.xcassets */,
+				A6DF3B4C2074179F0020AC77 /* LaunchScreen.storyboard */,
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F59C195388D20070C39A /* MRGAppDelegate.h */,
 				6003F59D195388D20070C39A /* MRGAppDelegate.m */,
 				A66FA2E01BAB49E10030191E /* MRGDemoController.h */,
@@ -155,8 +160,6 @@
 				A66FA2E31BAB49E10030191E /* MRGDemoTabStrip.m */,
 				6003F5A5195388D20070C39A /* MRGViewController.h */,
 				6003F5A6195388D20070C39A /* MRGViewController.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for MRGPagerController";
@@ -210,12 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "MRGPagerController_Example" */;
 			buildPhases = (
-				3BADDC49FD893B6A03C542B4 /* Check Pods Manifest.lock */,
+				7AAB427E6DDAFFA8A5B96EB0 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				C72539E39B7F40DC64B24B6C /* Copy Pods Resources */,
-				F628742A706A4AB69307DE79 /* Embed Pods Frameworks */,
+				6DBED4CD6A1F675AB49CC878 /* [CP] Embed Pods Frameworks */,
+				66BECCF3D9D13E1BCDCD82AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,12 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "MRGPagerController_Tests" */;
 			buildPhases = (
-				967368FFFC4FD310BD8E274C /* Check Pods Manifest.lock */,
+				A286848203B3498E2E34A93E /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				066DD0FAF16D9ECEC3995887 /* Copy Pods Resources */,
-				51AE364A9B66EF163B515DCF /* Embed Pods Frameworks */,
+				488818E19855D2BD67B7BF91 /* [CP] Embed Pods Frameworks */,
+				6981CDE622541E589191EB3C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,10 +257,14 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MRG;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Mirego;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 4Q596JWQC5;
+					};
 					6003F5AD195388D20070C39A = {
+						DevelopmentTeam = 4Q596JWQC5;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -287,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				A6DF3B4D2074179F0020AC77 /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -303,44 +311,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		066DD0FAF16D9ECEC3995887 /* Copy Pods Resources */ = {
+		488818E19855D2BD67B7BF91 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3BADDC49FD893B6A03C542B4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		51AE364A9B66EF163B515DCF /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,29 +326,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		967368FFFC4FD310BD8E274C /* Check Pods Manifest.lock */ = {
+		66BECCF3D9D13E1BCDCD82AD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C72539E39B7F40DC64B24B6C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,19 +341,73 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F628742A706A4AB69307DE79 /* Embed Pods Frameworks */ = {
+		6981CDE622541E589191EB3C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Tests/Pods-MRGPagerController_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DBED4CD6A1F675AB49CC878 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MRGPagerController/MRGPagerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRGPagerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGPagerController_Example/Pods-MRGPagerController_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AAB427E6DDAFFA8A5B96EB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRGPagerController_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A286848203B3498E2E34A93E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MRGPagerController_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,32 +471,46 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,25 +525,39 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -521,15 +566,16 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37E79EC0D5119B0F7D05B64C /* Pods-MRGPagerController_Example.debug.xcconfig */;
+			baseConfigurationReference = 80D98C6449B4B43DD92CB20B /* Pods-MRGPagerController_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGPagerController/MRGPagerController-Prefix.pch";
 				INFOPLIST_FILE = "MRGPagerController/MRGPagerController-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.MRGPagerController-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -537,15 +583,16 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DAA98961F28061DEF953FDC /* Pods-MRGPagerController_Example.release.xcconfig */;
+			baseConfigurationReference = E1532D89AEB2A60D4E8C4C96 /* Pods-MRGPagerController_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGPagerController/MRGPagerController-Prefix.pch";
 				INFOPLIST_FILE = "MRGPagerController/MRGPagerController-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.MRGPagerController-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -553,9 +600,10 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E2707089FA096CF96E7507B /* Pods-MRGPagerController_Tests.debug.xcconfig */;
+			baseConfigurationReference = 3201AC9BCE7F878B33788051 /* Pods-MRGPagerController_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -572,9 +620,10 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA0B7B6F27F27242F35D99B2 /* Pods-MRGPagerController_Tests.release.xcconfig */;
+			baseConfigurationReference = E8CABBF9F2BE3DB70BE630E0 /* Pods-MRGPagerController_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 4Q596JWQC5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
