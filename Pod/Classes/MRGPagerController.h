@@ -37,14 +37,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<MRGPagerControllerDelegate> delegate;
 @property (nonatomic, readonly, nullable) UIView<MRGPagerStrip> *pagerStrip;
-@property (nonatomic, copy, nullable) NSArray<UIViewController *> *viewControllers;
+@property (nonatomic, copy, nullable) NSArray<__kindof UIViewController *> *viewControllers;
 @property (nonatomic, weak, nullable) UIViewController *currentViewController;
 @property (nonatomic) UIEdgeInsets padding;
 
 - (instancetype)init;
 - (instancetype)initWithPagerStripClass:(nullable Class)pagerStripClass;
 
-- (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers animated:(BOOL)animated;
+- (void)setViewControllers:(NSArray<__kindof UIViewController *> *)viewControllers animated:(BOOL)animated;
 
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated;
 
