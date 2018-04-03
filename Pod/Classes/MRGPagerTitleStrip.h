@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -29,6 +29,8 @@
 #import <UIKit/UIKit.h>
 #import "MRGPagerStrip.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MRGPagerTitleStrip : UIView <MRGPagerStrip>
 
 @property (nonatomic, readonly) UIScrollView *scrollView;
@@ -53,3 +55,5 @@
 - (void)updateView;
 
 @end
+
+NS_ASSUME_NONNULL_END

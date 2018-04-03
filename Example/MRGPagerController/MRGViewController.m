@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.pagerController = [[MRGPagerController alloc] initWithPagerStripClass:[MRGDemoTabStrip class]];
     
     [self addChildViewController:self.pagerController];
@@ -55,19 +55,20 @@
 }
 
 - (void)configurePager {
-
-    NSArray *tabs = @[
-            [[MRGDemoController alloc] initWithTitle:@"1" text:@"1"],
-            [[MRGDemoController alloc] initWithTitle:@"2" text:@"2"],
-            [[MRGDemoController alloc] initWithTitle:@"3" text:@"3"],
-            [[MRGDemoController alloc] initWithTitle:@"4" text:@"4"],
-            [[MRGDemoController alloc] initWithTitle:@"5" text:@"5"],
-            [[MRGDemoController alloc] initWithTitle:@"6" text:@"6"],
-            [[MRGDemoController alloc] initWithTitle:@"7" text:@"7"],
-            [[MRGDemoController alloc] initWithTitle:@"8" text:@"8"],
-            [[MRGDemoController alloc] initWithTitle:@"9" text:@"9"]
-    ];
-
+    
+    NSArray<UIViewController *> *tabs =
+    @[
+      [[MRGDemoController alloc] initWithTitle:@"1" text:@"1"],
+      [[MRGDemoController alloc] initWithTitle:@"2" text:@"2"],
+      [[MRGDemoController alloc] initWithTitle:@"3" text:@"3"],
+      [[MRGDemoController alloc] initWithTitle:@"4" text:@"4"],
+      [[MRGDemoController alloc] initWithTitle:@"5" text:@"5"],
+      [[MRGDemoController alloc] initWithTitle:@"6" text:@"6"],
+      [[MRGDemoController alloc] initWithTitle:@"7" text:@"7"],
+      [[MRGDemoController alloc] initWithTitle:@"8" text:@"8"],
+      [[MRGDemoController alloc] initWithTitle:@"9" text:@"9"]
+      ];
+    
     self.pagerController.viewControllers = tabs;
     self.pagerController.currentViewController = tabs[7];
 }

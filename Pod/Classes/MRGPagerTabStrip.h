@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -28,12 +28,16 @@
 
 #import "MRGPagerTitleStrip.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface MRGPagerTabStrip : MRGPagerTitleStrip
 
 @property (nonatomic) BOOL drawFullUnderline;
 @property (nonatomic) CGFloat tabIndicatorHeight;
 @property (nonatomic) UIColor *tabIndicatorColor;
-@property (nonatomic) UIColor *tabHighlightedBackgroundColor; //Defaults to tabIndicatorColor if nil
-@property (nonatomic) UIColor *tabSelectedBackgroundColor;
+@property (nonatomic, nullable) UIColor *tabHighlightedBackgroundColor; //Defaults to tabIndicatorColor if nil
+@property (nonatomic, nullable) UIColor *tabSelectedBackgroundColor;
 
 @end
+
+NS_ASSUME_NONNULL_END

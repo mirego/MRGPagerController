@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2014-2017, Mirego
+// Copyright (c) 2014-2018, Mirego
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -30,12 +30,14 @@
 
 @protocol MRGPagerStripDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol MRGPagerStrip <NSObject>
 
-@property (nonatomic, weak) id<MRGPagerStripDelegate> delegate;
+@property (nonatomic, weak, nullable) id<MRGPagerStripDelegate> delegate;
 
-@property (nonatomic, copy) NSArray *pageTitles;
-- (void)setPageTitles:(NSArray *)pageTitles animated:(BOOL)animated;
+@property (nonatomic, copy, nullable) NSArray<NSString *> *pageTitles;
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated;
 
 @property (nonatomic) CGFloat currentIndex;
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated;
@@ -48,3 +50,5 @@
 - (void)pagerStrip:(id <MRGPagerStrip>)pagerStrip didSelectPageAtIndex:(NSUInteger)pageIndex;
 
 @end
+
+NS_ASSUME_NONNULL_END

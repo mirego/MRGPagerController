@@ -10,3 +10,7 @@
 #endif
 #endif
 
+
+FOUNDATION_EXPORT double Pods_MRGPagerController_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MRGPagerController_ExampleVersionString[];
+
