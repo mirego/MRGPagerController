@@ -6,11 +6,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   MRGPagerController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  MRGPagerController: ec70b0866720042fa60de78e918434e97d77c09a
+  MRGPagerController: 564ecb2103cf17d2a48a2423132f20c58f7f4352
 
 PODFILE CHECKSUM: 54ade33a80857e981cd8868bdb60abcb692be0fc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0.beta.2
