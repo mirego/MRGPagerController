@@ -372,7 +372,7 @@
 - (NSArray<NSString *> *)getPageTitles {
     NSMutableArray<NSString *> *titles = [NSMutableArray arrayWithCapacity:self.viewControllers.count];
     for (UIViewController *viewController in self.viewControllers) {
-        [titles addObject:viewController.title];
+        [titles addObject:viewController.title ?: @""];
     }
     return titles;
 }
