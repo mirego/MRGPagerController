@@ -1,6 +1,0 @@
-# references:
-# https://docs.travis-ci.com/user/languages/objective-c/
-
-language: objective-c
-xcode_project: Example/MRGPagerController.xcworkspace
-xcode_scheme: MRGPagerController_Example
