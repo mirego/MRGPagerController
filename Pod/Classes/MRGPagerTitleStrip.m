@@ -60,6 +60,8 @@
         _separatorColor = [UIColor colorWithWhite:1 alpha:0.2f];
         
         _scrollView = [[UIScrollView alloc] init];
+        _scrollView.isAccessibilityElement = NO;
+        _scrollView.accessibilityTraits = _scrollView.accessibilityTraits | UIAccessibilityTraitTabBar;
         _scrollView.scrollsToTop = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
