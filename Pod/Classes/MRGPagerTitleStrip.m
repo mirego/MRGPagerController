@@ -173,7 +173,7 @@
     
     BOOL animatedScroll = NO;
     CGFloat indexToScrollTo = self.currentIndex;
-    NSInteger focusedButtonIndex = [self findIndexOfFocusedButton];
+    NSInteger focusedButtonIndex = [self indexOfFocusedButton];
     if (focusedButtonIndex != NSNotFound) {
         indexToScrollTo = focusedButtonIndex;
         animatedScroll = YES;
@@ -246,14 +246,16 @@
     }];
 }
 
-- (NSInteger)findIndexOfFocusedButton {
-    for (NSInteger i = 0; i < [self.buttons count]; i++) {
-        UIButton *button = self.buttons[i];
+- (NSInteger)indexOfFocusedButton {
+    __block NSInteger focusedIndex = NSNotFound;
+    [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
         if (button.isFocused) {
-            return i;
+            focusedIndex = idx;
+            *stop = YES;
         }
-    }
-    return NSNotFound;
+    }];
+    
+    return focusedIndex;
 }
 
 #pragma mark - get/set
