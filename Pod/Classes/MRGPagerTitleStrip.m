@@ -253,7 +253,7 @@
             return i;
         }
     }
-    return NSNotFound; // Return NSNotFound if no button is focused
+    return NSNotFound;
 }
 
 #pragma mark - get/set
