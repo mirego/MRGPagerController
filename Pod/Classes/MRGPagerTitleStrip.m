@@ -170,7 +170,16 @@
     self.scrollView.contentSize = CGSizeMake(((buttonLeft > 0.0f) ? (buttonLeft + separatorSize.width) : 0.0f), size.height);
     
     [self.scrollView layoutIfNeeded];
-    [self scrollToIndex:self.currentIndex animated:NO];
+    
+    BOOL animatedScroll = NO;
+    CGFloat indexToScrollTo = self.currentIndex;
+    NSInteger focusedButtonIndex = [self findIndexOfFocusedButton];
+    if (focusedButtonIndex != NSNotFound) {
+        indexToScrollTo = focusedButtonIndex;
+        animatedScroll = YES;
+    }
+    
+    [self scrollToIndex:indexToScrollTo animated:animatedScroll];
     
     [self.delegate pagerStripSizeChanged:self];
 }
@@ -223,10 +232,10 @@
         offset -= ((CGRectGetWidth(self.scrollView.bounds) - width) * 0.5f);
         
         offset = MIN(MAX(offset, 0), self.scrollView.contentSize.width - CGRectGetWidth(self.scrollView.bounds));
-        [self.scrollView setContentOffset:CGPointMake(offset, self.scrollView.contentOffset.y) animated:NO];
+        [self.scrollView setContentOffset:CGPointMake(offset, self.scrollView.contentOffset.y) animated:animated];
         
     } else {
-        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:NO];
+        [self.scrollView setContentOffset:CGPointMake(0, self.scrollView.contentOffset.y) animated:animated];
     }
 }
 
@@ -235,6 +244,16 @@
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger buttonIndex, BOOL *stop) {
         [button setSelected:(buttonIndex == currentIndex)];
     }];
+}
+
+- (NSInteger)findIndexOfFocusedButton {
+    for (NSInteger i = 0; i < [self.buttons count]; i++) {
+        UIButton *button = self.buttons[i];
+        if (button.isFocused) {
+            return i;
+        }
+    }
+    return NSNotFound; // Return NSNotFound if no button is focused
 }
 
 #pragma mark - get/set
