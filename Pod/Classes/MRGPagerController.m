@@ -151,8 +151,7 @@
     [self moveToPageIndex: MIN(self.pagerStrip.currentIndex +1, self.viewControllers.count -1)];
 }
 
-- (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer
-{
+- (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
     [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
 }
 
