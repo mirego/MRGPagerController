@@ -122,8 +122,8 @@
     self.pagerScrollView.scrollEnabled = NO;
     
     // Only when an external keyboard is connected
-    // The default (Drag gesture) of UIScrollView is disabled;
-    // and need to be replaced with swipe gesture
+    // The default (Drag gesture) of UIScrollView is disabled
+    // and needs to be replaced with a swipe gesture
     [self addGestureRecogniser];
 }
 
