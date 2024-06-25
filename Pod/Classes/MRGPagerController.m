@@ -153,7 +153,7 @@
 
 - (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
     [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
-}
+    [self moveToPageIndex: MAX(self.pagerStrip.currentIndex - 1, 0)];
 
 - (void)moveToPageIndex:(NSUInteger)index {
     if (index != self.pagerStrip.currentIndex) {
