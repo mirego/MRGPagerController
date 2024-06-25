@@ -27,6 +27,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import "MRGPagerController.h"
+#import "GameController/GCKeyboard.h"
 
 @interface MRGPagerController ()<UIScrollViewDelegate, MRGPagerStripDelegate>
 
@@ -37,6 +38,8 @@
 @property (nonatomic) BOOL callDidEndScrollingOnNextViewDidLayoutSubviews;
 @property (nonatomic) CGSize lastSize;
 @property (nonatomic, weak, nullable) UIViewController *lastViewControllerEndedScrollingOn;
+@property (nonatomic) UISwipeGestureRecognizer *swipeLeft;
+@property (nonatomic) UISwipeGestureRecognizer *swipeRight;
 @end
 
 @implementation MRGPagerController
@@ -63,6 +66,7 @@
     _pagerStrip.delegate = nil;
     _pagerScrollView.delegate = nil;
     _delegate = nil;
+    [self removeKeyboardObserver];
 }
 
 #pragma mark - lifecyle
@@ -84,9 +88,79 @@
     self.pagerScrollView.pagingEnabled = YES;
     self.pagerScrollView.showsHorizontalScrollIndicator = NO;
     self.pagerScrollView.showsVerticalScrollIndicator = NO;
+    
+    // Need to support external keyboard for accessibility
+    // and fix the conflict between keyboard arrow <-> and UIScrollView behavior
+    // NOTE 1: Using [GCKeyboard coalescedKeyboard] to detect the keyboard doesn't work because it always returns nil
+    // NOTE 2: Haven't found a proper solution to access app.isFullKeyboardAccessEnabled
+    [self addKeyboardObserver];
+    
     [self.view addSubview:self.pagerScrollView];
     
     [self updateViewControllersWithOldViewControllers:nil newViewControllers:self.viewControllers animated:NO];
+}
+
+#pragma mark - Support external keyboard for Accessibility
+
+- (void)addKeyboardObserver {
+    if (@available(iOS 14.0, *)) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidConnect:) name:GCKeyboardDidConnectNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidDisonnect:) name:GCKeyboardDidDisconnectNotification object:nil];
+    }
+}
+
+- (void)removeKeyboardObserver {
+    if (@available(iOS 14.0, *)) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidConnectNotification object:nil];
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidDisconnectNotification object:nil];
+    }
+}
+
+- (void)hardwareKeyboardDidConnect:(NSNotification *)notification {
+    
+    // Fix the conflict between keyboard arrow <-> and UIScrollView behavior
+    self.pagerScrollView.scrollEnabled = NO;
+    
+    // Only when an external keyboard is connected
+    // The default (Drag gesture) of UIScrollView is disabled
+    // and needs to be replaced with a swipe gesture
+    [self addGestureRecogniser];
+}
+
+- (void)hardwareKeyboardDidDisonnect:(NSNotification *)notification {
+    self.pagerScrollView.scrollEnabled = YES;
+    [self removeGestureRecogniser];
+}
+
+- (void)addGestureRecogniser {
+    self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+    [self.swipeLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.pagerScrollView addGestureRecognizer:self.swipeLeft];
+    
+    self.swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
+    [self.swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self.pagerScrollView addGestureRecognizer:self.swipeRight];
+}
+
+- (void)removeGestureRecogniser {
+    [self.pagerScrollView removeGestureRecognizer:self.swipeLeft];
+    [self.pagerScrollView removeGestureRecognizer:self.swipeRight];
+}
+
+- (void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
+    [self moveToPageIndex: MIN(self.pagerStrip.currentIndex +1, self.viewControllers.count -1)];
+}
+
+- (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
+    [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
+    [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
+}
+
+- (void)moveToPageIndex:(NSUInteger)index {
+    if (index != self.pagerStrip.currentIndex) {
+        [self.pagerStrip setCurrentIndex:index animated:YES];
+        [self setCurrentViewController:self.viewControllers[index] animated:YES];
+    }
 }
 
 #pragma mark - layout
