@@ -147,8 +147,7 @@
     [self.pagerScrollView removeGestureRecognizer:self.swipeRight];
 }
 
-- (void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer
-{
+- (void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
     [self moveToPageIndex: MIN(self.pagerStrip.currentIndex +1, self.viewControllers.count -1)];
 }
 
