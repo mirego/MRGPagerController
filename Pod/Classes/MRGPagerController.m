@@ -124,7 +124,7 @@
     // Only when an external keyboard is connected
     // The default (Drag gesture) of UIScrollView is disabled;
     // and need to be replaced with swipe gesture
-    [self addGestureRecogniser]; //
+    [self addGestureRecogniser];
 }
 
 - (void)hardwareKeyboardDidDisonnect:(NSNotification *)notification {
