@@ -89,10 +89,10 @@
     self.pagerScrollView.showsHorizontalScrollIndicator = NO;
     self.pagerScrollView.showsVerticalScrollIndicator = NO;
     
-    // Need to support external keyboard for Accessibility
+    // Need to support external keyboard for accessibility
     // and fix the conflict between keyboard arrow <-> and UIScrollView behavior
-    // NOTE1: Don't work to detect keyboard with [GCKeyboard coalescedKeyboard] because it always nil
-    // NOTE2: I don't find a correct solution to access app.isFullKeyboardAccessEnabledé
+    // NOTE 1: Using [GCKeyboard coalescedKeyboard] to detect the keyboard doesn't work because it always returns nil
+    // NOTE 2: Haven't found a proper solution to access app.isFullKeyboardAccessEnabled
     [self addKeyboardObserver];
     
     [self.view addSubview:self.pagerScrollView];
