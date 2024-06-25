@@ -148,7 +148,7 @@
 }
 
 - (void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
-    [self moveToPageIndex: MIN(self.pagerStrip.currentIndex +1, self.viewControllers.count -1)];
+    [self moveToPageIndex: MIN(self.pagerStrip.currentIndex + 1, self.viewControllers.count - 1)];
 }
 
 - (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
