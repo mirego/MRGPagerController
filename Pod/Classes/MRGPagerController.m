@@ -91,8 +91,7 @@
     
     // Need to support external keyboard for accessibility
     // and fix the conflict between keyboard arrow <-> and UIScrollView behavior
-    // NOTE 1: Using [GCKeyboard coalescedKeyboard] to detect the keyboard doesn't work because it always returns nil
-    // NOTE 2: Haven't found a proper solution to access app.isFullKeyboardAccessEnabled
+    // NOTE: Haven't found a proper solution to access app.isFullKeyboardAccessEnabled
     [self addKeyboardObserver];
     
     [self.view addSubview:self.pagerScrollView];
@@ -106,6 +105,11 @@
     if (@available(iOS 14.0, *)) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidConnect:) name:GCKeyboardDidConnectNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidDisonnect:) name:GCKeyboardDidDisconnectNotification object:nil];
+        
+        // If keyboard was already connected
+        if ([GCKeyboard coalescedKeyboard]) {
+            [self disabledScrollForKeyboardArrow];
+        }
     }
 }
 
@@ -113,11 +117,11 @@
     if (@available(iOS 14.0, *)) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidConnectNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidDisconnectNotification object:nil];
+        [self enabledScrollForKeyboardArrow];
     }
 }
 
-- (void)hardwareKeyboardDidConnect:(NSNotification *)notification {
-    
+- (void)disabledScrollForKeyboardArrow {
     // Fix the conflict between keyboard arrow <-> and UIScrollView behavior
     self.pagerScrollView.scrollEnabled = NO;
     
@@ -127,24 +131,43 @@
     [self addGestureRecogniser];
 }
 
-- (void)hardwareKeyboardDidDisonnect:(NSNotification *)notification {
+- (void)hardwareKeyboardDidConnect:(NSNotification *)notification {
+    [self disabledScrollForKeyboardArrow];
+}
+
+- (void)enabledScrollForKeyboardArrow {
     self.pagerScrollView.scrollEnabled = YES;
     [self removeGestureRecogniser];
 }
 
+- (void)hardwareKeyboardDidDisonnect:(NSNotification *)notification {
+    [self enabledScrollForKeyboardArrow];
+}
+
 - (void)addGestureRecogniser {
-    self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
-    [self.swipeLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.pagerScrollView addGestureRecognizer:self.swipeLeft];
+    if (!self.swipeLeft) {
+        self.swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+        [self.swipeLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+        [self.pagerScrollView addGestureRecognizer:self.swipeLeft];
+    }
     
-    self.swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
-    [self.swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.pagerScrollView addGestureRecognizer:self.swipeRight];
+    if (!self.swipeRight) {
+        self.swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRight:)];
+        [self.swipeRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+        [self.pagerScrollView addGestureRecognizer:self.swipeRight];
+    }
 }
 
 - (void)removeGestureRecogniser {
-    [self.pagerScrollView removeGestureRecognizer:self.swipeLeft];
-    [self.pagerScrollView removeGestureRecognizer:self.swipeRight];
+    if (self.swipeLeft) {
+        [self.pagerScrollView removeGestureRecognizer:self.swipeLeft];
+        self.swipeLeft = nil;
+    }
+    
+    if (self.swipeRight) {
+        [self.pagerScrollView removeGestureRecognizer:self.swipeRight];
+        self.swipeRight = nil;
+    }
 }
 
 - (void)handleSwipeLeft:(UISwipeGestureRecognizer *)recognizer {
@@ -152,7 +175,6 @@
 }
 
 - (void)handleSwipeRight:(UISwipeGestureRecognizer *)recognizer {
-    [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
     [self moveToPageIndex: MAX(self.pagerStrip.currentIndex -1, 0)];
 }
 
