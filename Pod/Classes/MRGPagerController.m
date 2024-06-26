@@ -112,6 +112,7 @@
         }
     }
 }
+
 - (void)removeKeyboardObserver {
     if (@available(iOS 14.0, tvOS 14.0, *)) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidConnectNotification object:nil];
