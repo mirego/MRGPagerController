@@ -102,7 +102,7 @@
 #pragma mark - Support external keyboard for Accessibility
 
 - (void)addKeyboardObserver {
-    if (@available(iOS 14.0, *)) {
+    if (@available(iOS 14.0, tvOS 14.0, *)) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidConnect:) name:GCKeyboardDidConnectNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hardwareKeyboardDidDisonnect:) name:GCKeyboardDidDisconnectNotification object:nil];
         
@@ -112,9 +112,8 @@
         }
     }
 }
-
 - (void)removeKeyboardObserver {
-    if (@available(iOS 14.0, *)) {
+    if (@available(iOS 14.0, tvOS 14.0, *)) {
         [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidConnectNotification object:nil];
         [[NSNotificationCenter defaultCenter] removeObserver:self name:GCKeyboardDidDisconnectNotification object:nil];
         [self enabledScrollForKeyboardArrow];
