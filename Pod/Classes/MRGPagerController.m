@@ -476,6 +476,7 @@
 #pragma mark - MRGPagerStripDelegate
 
 - (void)pagerStripSizeChanged:(id<MRGPagerStrip>)pagerStrip {
+    self.lastSize = CGSizeZero;
     [self.view setNeedsLayout];
 }
 
