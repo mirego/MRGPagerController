@@ -40,7 +40,7 @@
     if (self) {
         self.backgroundColor = [UIColor grayColor];
         self.titleTextAlignment = NSTextAlignmentCenter;
-        self.titleFont = [UIFont italicSystemFontOfSize:24];
+        self.titleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
         self.titleTextColor = [UIColor blueColor];
         self.titleHighlightedTextColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
         self.titleTextSpacing = 30.0f;
@@ -53,7 +53,17 @@
         self.tabIndicatorColor = [UIColor yellowColor];
     }
 
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(contentSizeChanged) name:UIContentSizeCategoryDidChangeNotification object:nil];
+    
     return self;
+}
+
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UIContentSizeCategoryDidChangeNotification object:nil];
+}
+
+- (void)contentSizeChanged {
+    self.titleFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
 }
 
 @end
