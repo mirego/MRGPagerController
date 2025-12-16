@@ -79,6 +79,7 @@
         [self.view addSubview:self.pagerStrip];
         self.pagerStrip.delegate = self;
         self.pagerStrip.pageTitles = [self getPageTitles];
+        [self updateBadges];
         [self.view addSubview:self.pagerStrip];
     }
     
@@ -425,6 +426,7 @@
         _viewControllers = [viewControllers copy];
         
         [self.pagerStrip setPageTitles:[self getPageTitles] animated:animated];
+        [self updateBadges];
         [self updateViewControllersWithOldViewControllers:oldViewControllers newViewControllers:self.viewControllers animated:animated];
         
         if ((self.pagerScrollView != nil)) {
@@ -457,6 +459,10 @@
     [self setCurrentViewController:currentViewController animated:NO];
 }
 
+- (void)updateBadges {
+    [self.pagerStrip setPageBadges:[self getPageBadges]];
+}
+
 - (void)setPadding:(UIEdgeInsets)padding {
     _padding = padding;
     
@@ -471,6 +477,17 @@
         [titles addObject:viewController.title ?: @""];
     }
     return titles;
+}
+
+- (NSDictionary<NSNumber *, UIImage *> *)getPageBadges {
+    NSMutableDictionary<NSNumber *, UIImage *> *badges = [NSMutableDictionary dictionaryWithCapacity:self.viewControllers.count];
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
+        UIImage *badge = [self.delegate pagerController:self getBadgeForIndex:idx];
+        if (badge != nil) {
+            [badges setObject:badge forKey:@(idx)];
+        }
+    }];
+    return badges;
 }
 
 #pragma mark - MRGPagerStripDelegate

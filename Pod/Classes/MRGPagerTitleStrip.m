@@ -39,6 +39,7 @@
 @implementation MRGPagerTitleStrip
 
 @synthesize pageTitles = _pageTitles;
+@synthesize pageBadges = _pageBadges;
 @synthesize currentIndex = _currentIndex;
 @synthesize delegate = _delegate;
 
@@ -52,6 +53,7 @@
         _titleTextColor = [UIColor colorWithWhite:1 alpha:0.5f];
         _titleHighlightedTextColor = [UIColor whiteColor];
         _titleTextSpacing = 10;
+        _badgeEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0);
         
         _centerTabs = NO;
         
@@ -102,6 +104,8 @@
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected];
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected|UIControlStateHighlighted];
         [button setContentEdgeInsets:UIEdgeInsetsMake(self.padding.top, self.titleTextSpacing, self.padding.bottom, self.titleTextSpacing)];
+        [button setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
+        [button setImageEdgeInsets:self.badgeEdgeInsets];
     }
     
     if ([self needsUpdateSeparators] || ((self.buttons.count > 0) && ((self.buttons.count-1) != self.separators.count))) {
@@ -192,9 +196,16 @@
     [self.buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.buttons removeAllObjects];
     
-    for (NSString *title in self.pageTitles) {
+    for (NSUInteger idx = 0; idx < self.pageTitles.count; idx++) {
+        NSString *title = self.pageTitles[idx];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:title forState:UIControlStateNormal];
+        
+        UIImage *badge = self.pageBadges[@(idx)];
+        if (badge){
+            [button setImage:badge forState:UIControlStateNormal];
+        }
+                
         [self.scrollView addSubview:button];
         [self.buttons addObject:button];
     }
@@ -273,6 +284,15 @@
     [self setPageTitles:pageTitles animated:NO];
 }
 
+- (void)setPageBadges:(NSDictionary<NSNumber *, UIImage *> *)pageBadges {
+    if (_pageBadges != pageBadges) {
+        _pageBadges = [pageBadges copy];
+        
+        [self updateButtonsAnimated:NO];
+        [self setNeedsUpdateView];
+    }
+}
+
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated {
     if (!(fabs(_currentIndex - currentIndex) < FLT_EPSILON)) {
         _currentIndex = currentIndex;
@@ -312,6 +332,13 @@
 - (void)setTitleTextSpacing:(CGFloat)titleTextSpacing {
     if (_titleTextSpacing != titleTextSpacing) {
         _titleTextSpacing = titleTextSpacing;
+        [self setNeedsUpdateView];
+    }
+}
+
+- (void)setBadgeEdgeInsets:(UIEdgeInsets)badgeEdgeInsets {
+    if (UIEdgeInsetsEqualToEdgeInsets(_badgeEdgeInsets, badgeEdgeInsets) == NO) {
+        _badgeEdgeInsets = badgeEdgeInsets;
         [self setNeedsUpdateView];
     }
 }

@@ -112,9 +112,7 @@
 
 #pragma mark - get/set
 
-- (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated {
-    [super setPageTitles:pageTitles animated:animated];
-    
+- (void)configureButtons {
     UIColor *highlightedColor = self.tabHighlightedBackgroundColor ? self.tabHighlightedBackgroundColor : self.tabIndicatorColor;
     
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger index, BOOL *stop) {
@@ -130,6 +128,16 @@
     }];
     
     [self.scrollView bringSubviewToFront:self.tabIndicatorView];
+}
+
+- (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated {
+    [super setPageTitles:pageTitles animated:animated];
+    [self configureButtons];
+}
+
+- (void)setPageBadges:( NSDictionary<NSNumber *, UIImage *> *)pageBadges {
+    [super setPageBadges:pageBadges];
+    [self configureButtons];
 }
 
 - (UIImage *)backgroundImageWithColor:(UIColor *)color {
