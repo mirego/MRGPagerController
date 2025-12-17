@@ -55,6 +55,8 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MRGPagerControllerDelegate<NSObject>
 
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
+
+@optional
 - (nullable UIImage *)pagerController:(MRGPagerController *)pagerController getBadgeForIndex:(NSUInteger)index;
 
 @end
