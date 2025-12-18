@@ -480,15 +480,18 @@
 }
 
 - (NSDictionary<NSNumber *, UIImage *> *)getPageBadges {
+    if (![self.delegate respondsToSelector:@selector(pagerController:badgeForViewControllerAtIndex:)]) {
+        return @{};
+    }
+    
     NSMutableDictionary<NSNumber *, UIImage *> *badges = [NSMutableDictionary dictionaryWithCapacity:self.viewControllers.count];
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
-        if ([self.delegate respondsToSelector:@selector(pagerController:badgeForViewControllerAtIndex:)]) {
-            UIImage *badge = [self.delegate pagerController:self badgeForViewControllerAtIndex:idx];
-            if (badge != nil) {
-                [badges setObject:badge forKey:@(idx)];
-            }
+        UIImage *badge = [self.delegate pagerController:self badgeForViewControllerAtIndex:idx];
+        if (badge != nil) {
+            [badges setObject:badge forKey:@(idx)];
         }
     }];
+    
     return badges;
 }
 
