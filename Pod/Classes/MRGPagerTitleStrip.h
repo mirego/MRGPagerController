@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) UIColor *titleTextColor;
 @property (nonatomic) UIColor *titleHighlightedTextColor;
 @property (nonatomic) CGFloat titleTextSpacing;
+@property (nonatomic) UIEdgeInsets badgeEdgeInsets;
 
 @property (nonatomic) BOOL centerTabs;
 @property (nonatomic) UIEdgeInsets padding;

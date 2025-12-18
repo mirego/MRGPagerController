@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSArray<NSString *> *pageTitles;
 - (void)setPageTitles:(NSArray<NSString *> *)pageTitles animated:(BOOL)animated;
 
+@property (nonatomic, copy)  NSDictionary<NSNumber *, UIImage *> *pageBadges;
+
 @property (nonatomic) CGFloat currentIndex;
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated;
 

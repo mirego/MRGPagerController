@@ -48,11 +48,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setCurrentViewController:(UIViewController *)currentViewController animated:(BOOL)animated;
 
+- (void)updateBadges;
+
 @end
 
 @protocol MRGPagerControllerDelegate<NSObject>
 
+@required
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
+
+@optional
+- (nullable UIImage *)pagerController:(MRGPagerController *)pagerController badgeForViewControllerAtIndex:(NSUInteger)index;
 
 @end
 

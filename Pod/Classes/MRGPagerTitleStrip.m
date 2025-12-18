@@ -39,6 +39,7 @@
 @implementation MRGPagerTitleStrip
 
 @synthesize pageTitles = _pageTitles;
+@synthesize pageBadges = _pageBadges;
 @synthesize currentIndex = _currentIndex;
 @synthesize delegate = _delegate;
 
@@ -52,6 +53,7 @@
         _titleTextColor = [UIColor colorWithWhite:1 alpha:0.5f];
         _titleHighlightedTextColor = [UIColor whiteColor];
         _titleTextSpacing = 10;
+        _badgeEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 0);
         
         _centerTabs = NO;
         
@@ -94,7 +96,10 @@
 }
 
 - (void)updateView {
-    for (UIButton *button in self.buttons) {
+    UIUserInterfaceLayoutDirection layoutDirection = UIApplication.sharedApplication.userInterfaceLayoutDirection;
+    UISemanticContentAttribute contentAttribute = (layoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? UISemanticContentAttributeForceLeftToRight : UISemanticContentAttributeForceRightToLeft;
+    
+    [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
         [button.titleLabel setFont:self.titleFont];
         [button.titleLabel setTextAlignment:self.titleTextAlignment];
         [button setTitleColor:self.titleTextColor forState:UIControlStateNormal];
@@ -102,7 +107,11 @@
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected];
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected|UIControlStateHighlighted];
         [button setContentEdgeInsets:UIEdgeInsetsMake(self.padding.top, self.titleTextSpacing, self.padding.bottom, self.titleTextSpacing)];
-    }
+        
+        [button setImage:self.pageBadges[@(idx)] forState:UIControlStateNormal];
+        [button setSemanticContentAttribute:contentAttribute];
+        [button setImageEdgeInsets:self.badgeEdgeInsets];
+    }];
     
     if ([self needsUpdateSeparators] || ((self.buttons.count > 0) && ((self.buttons.count-1) != self.separators.count))) {
         [self updateSeparators];
@@ -195,6 +204,7 @@
     for (NSString *title in self.pageTitles) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:title forState:UIControlStateNormal];
+        
         [self.scrollView addSubview:button];
         [self.buttons addObject:button];
     }
@@ -273,6 +283,14 @@
     [self setPageTitles:pageTitles animated:NO];
 }
 
+- (void)setPageBadges:(NSDictionary<NSNumber *, UIImage *> *)pageBadges {
+    if (_pageBadges != pageBadges) {
+        _pageBadges = [pageBadges copy];
+        
+        [self setNeedsUpdateView];
+    }
+}
+
 - (void)setCurrentIndex:(CGFloat)currentIndex animated:(BOOL)animated {
     if (!(fabs(_currentIndex - currentIndex) < FLT_EPSILON)) {
         _currentIndex = currentIndex;
@@ -312,6 +330,14 @@
 - (void)setTitleTextSpacing:(CGFloat)titleTextSpacing {
     if (_titleTextSpacing != titleTextSpacing) {
         _titleTextSpacing = titleTextSpacing;
+        [self setNeedsUpdateView];
+    }
+}
+
+- (void)setBadgeEdgeInsets:(UIEdgeInsets)badgeEdgeInsets {
+    if (!UIEdgeInsetsEqualToEdgeInsets(_badgeEdgeInsets, badgeEdgeInsets)) {
+        _badgeEdgeInsets = badgeEdgeInsets;
+        
         [self setNeedsUpdateView];
     }
 }
