@@ -482,8 +482,8 @@
 - (NSDictionary<NSNumber *, UIImage *> *)getPageBadges {
     NSMutableDictionary<NSNumber *, UIImage *> *badges = [NSMutableDictionary dictionaryWithCapacity:self.viewControllers.count];
     [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *viewController, NSUInteger idx, BOOL *stop) {
-        if ([self.delegate respondsToSelector:@selector(pagerController:getBadgeForIndex:)]) {
-            UIImage *badge = [self.delegate pagerController:self getBadgeForIndex:idx];
+        if ([self.delegate respondsToSelector:@selector(pagerController:badgeForViewControllerAtIndex:)]) {
+            UIImage *badge = [self.delegate pagerController:self badgeForViewControllerAtIndex:idx];
             if (badge != nil) {
                 [badges setObject:badge forKey:@(idx)];
             }

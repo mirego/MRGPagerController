@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
 
 @optional
-- (nullable UIImage *)pagerController:(MRGPagerController *)pagerController getBadgeForIndex:(NSUInteger)index;
+- (nullable UIImage *)pagerController:(MRGPagerController *)pagerController badgeForViewControllerAtIndex:(NSUInteger)index;
 
 @end
 

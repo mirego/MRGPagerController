@@ -96,7 +96,10 @@
 }
 
 - (void)updateView {
-    for (UIButton *button in self.buttons) {
+    UIUserInterfaceLayoutDirection layoutDirection = [UIApplication sharedApplication].userInterfaceLayoutDirection;
+    UISemanticContentAttribute contentAttribute = (layoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? UISemanticContentAttributeForceLeftToRight : UISemanticContentAttributeForceRightToLeft;
+    
+    [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
         [button.titleLabel setFont:self.titleFont];
         [button.titleLabel setTextAlignment:self.titleTextAlignment];
         [button setTitleColor:self.titleTextColor forState:UIControlStateNormal];
@@ -104,9 +107,11 @@
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected];
         [button setTitleColor:self.titleHighlightedTextColor forState:UIControlStateSelected|UIControlStateHighlighted];
         [button setContentEdgeInsets:UIEdgeInsetsMake(self.padding.top, self.titleTextSpacing, self.padding.bottom, self.titleTextSpacing)];
-        [button setSemanticContentAttribute:UISemanticContentAttributeForceRightToLeft];
+        
+        [button setImage:self.pageBadges[@(idx)] forState:UIControlStateNormal];
+        [button setSemanticContentAttribute:contentAttribute];
         [button setImageEdgeInsets:self.badgeEdgeInsets];
-    }
+    }];
     
     if ([self needsUpdateSeparators] || ((self.buttons.count > 0) && ((self.buttons.count-1) != self.separators.count))) {
         [self updateSeparators];
@@ -201,11 +206,6 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:title forState:UIControlStateNormal];
         
-        UIImage *badge = self.pageBadges[@(idx)];
-        if (badge){
-            [button setImage:badge forState:UIControlStateNormal];
-        }
-                
         [self.scrollView addSubview:button];
         [self.buttons addObject:button];
     }
@@ -288,7 +288,6 @@
     if (_pageBadges != pageBadges) {
         _pageBadges = [pageBadges copy];
         
-        [self updateButtonsAnimated:NO];
         [self setNeedsUpdateView];
     }
 }
@@ -339,6 +338,7 @@
 - (void)setBadgeEdgeInsets:(UIEdgeInsets)badgeEdgeInsets {
     if (UIEdgeInsetsEqualToEdgeInsets(_badgeEdgeInsets, badgeEdgeInsets) == NO) {
         _badgeEdgeInsets = badgeEdgeInsets;
+        
         [self setNeedsUpdateView];
     }
 }
