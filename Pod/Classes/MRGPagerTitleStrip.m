@@ -96,7 +96,7 @@
 }
 
 - (void)updateView {
-    UIUserInterfaceLayoutDirection layoutDirection = [UIApplication sharedApplication].userInterfaceLayoutDirection;
+    UIUserInterfaceLayoutDirection layoutDirection = UIApplication.sharedApplication.userInterfaceLayoutDirection;
     UISemanticContentAttribute contentAttribute = (layoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? UISemanticContentAttributeForceLeftToRight : UISemanticContentAttributeForceRightToLeft;
     
     [self.buttons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
@@ -201,8 +201,7 @@
     [self.buttons makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self.buttons removeAllObjects];
     
-    for (NSUInteger idx = 0; idx < self.pageTitles.count; idx++) {
-        NSString *title = self.pageTitles[idx];
+    for (NSString *title in self.pageTitles) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:title forState:UIControlStateNormal];
         
@@ -336,7 +335,7 @@
 }
 
 - (void)setBadgeEdgeInsets:(UIEdgeInsets)badgeEdgeInsets {
-    if (UIEdgeInsetsEqualToEdgeInsets(_badgeEdgeInsets, badgeEdgeInsets) == NO) {
+    if (!UIEdgeInsetsEqualToEdgeInsets(_badgeEdgeInsets, badgeEdgeInsets)) {
         _badgeEdgeInsets = badgeEdgeInsets;
         
         [self setNeedsUpdateView];

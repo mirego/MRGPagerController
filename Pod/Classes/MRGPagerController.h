@@ -54,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol MRGPagerControllerDelegate<NSObject>
 
+@required
 - (void)pagerController:(MRGPagerController *)pagerController didEndScrollingOnViewController:(UIViewController *)viewController;
 
 @optional
