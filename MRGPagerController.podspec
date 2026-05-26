@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/Mirego'
 
   s.requires_arc     = true
-  s.source_files     = 'Pod/Classes'
+  s.source_files        = 'Sources/MRGPagerController/**/*.{h,m}'
+  s.public_header_files = 'Sources/MRGPagerController/include/*.h'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 end
