@@ -4,7 +4,18 @@ An highly customizable pager controller.
 
 ## Adding to your project
 
-If you're using [`CocoaPods`](http://cocoapods.org/), there's nothing simpler.
+### Swift Package Manager
+
+Add the following to your `Package.swift` dependencies:
+
+```swift
+.package(url: "https://github.com/mirego/MRGPagerController.git", from: "1.3.0")
+```
+
+Or add it directly in Xcode via **File > Add Package Dependencies**.
+
+### CocoaPods
+
 Add the following to your [`Podfile`](http://docs.cocoapods.org/podfile.html)
 and run `pod install`
 

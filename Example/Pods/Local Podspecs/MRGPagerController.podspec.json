@@ -13,8 +13,9 @@
   },
   "social_media_url": "https://twitter.com/Mirego",
   "requires_arc": true,
-  "source_files": "Pod/Classes",
+  "source_files": "Sources/MRGPagerController/**/*.{h,m}",
+  "public_header_files": "Sources/MRGPagerController/include/*.h",
   "platforms": {
-    "ios": "9.0"
+    "ios": "12.0"
   }
 }

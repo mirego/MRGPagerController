@@ -28,3 +28,7 @@ DerivedData
 #
 # Pods/
 Example/.idea
+
+# Swift Package Manager
+.build/
+.swiftpm/
