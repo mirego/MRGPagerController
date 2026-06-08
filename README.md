@@ -9,7 +9,7 @@ An highly customizable pager controller.
 Add the following to your `Package.swift` dependencies:
 
 ```swift
-.package(url: "https://github.com/mirego/MRGPagerController.git", from: "1.3.0")
+.package(url: "https://github.com/mirego/MRGPagerController.git", from: "1.3.1")
 ```
 
 Or add it directly in Xcode via **File > Add Package Dependencies**.

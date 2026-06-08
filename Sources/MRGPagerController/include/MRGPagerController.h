@@ -28,6 +28,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MRGPagerStrip.h"
+#import "MRGPagerTabStrip.h"
+#import "MRGPagerTitleStrip.h"
 
 @protocol MRGPagerControllerDelegate;
 
